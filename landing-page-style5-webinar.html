@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREE WEBINAR: The Root Cause Solution to Chronic Pain | Dr. Debra Asakura</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Urgency Bar */
+        .urgency-bar {
+            background: #ff6b6b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .header .logo {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .hero h1 {
+            font-size: 2.6em;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: #222;
+        }
+        .hero .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+        .webinar-details {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            display: inline-block;
+        }
+        .webinar-details p {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+        .webinar-details strong {
+            color: #667eea;
+        }
+        
+        /* Video Section */
+        .video-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .video-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .video-placeholder::after {
+            content: '▶';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #667eea;
+            font-size: 1.5em;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 60px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+        .form-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .form-section p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1em;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background: #667eea;
+            color: white;
+            padding: 22px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        .privacy {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 20px;
+        }
+        
+        /* What You'll Learn */
+        .learn {
+            padding: 80px 0;
+        }
+        .learn h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+        }
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .learn-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        .learn-icon {
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+        .learn-item h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .learn-item p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Who Is This For */
+        .who-for {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .who-for h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+        }
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .who-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+        .who-item .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .who-item h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .who-item p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            background: #667eea;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .social-proof h3 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        .attendee-count {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .social-proof p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        /* Host Section */
+        .host {
+            padding: 80px 0;
+        }
+        .host-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .host-image {
+            width: 200px;
+            height: 200px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+        .host h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+        .host h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        .host .title {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .host p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .host .credentials {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+        .host .credentials li {
+            margin-bottom: 10px;
+            color: #555;
+            list-style: none;
+            padding-left: 25px;
+            position: relative;
+        }
+        .host .credentials li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        /* Countdown */
+        .countdown-section {
+            background: #ff6b6b;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        .countdown-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .faq h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+        }
+        .faq-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+        .faq-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .faq-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .final-cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 20px 60px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="urgency-bar">
+        ⚠️ Only 47 Spots Remaining — Register Now Before We Fill Up!
+    </div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">Dr. Debra Asakura</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="badge">FREE LIVE WEBINAR</div>
+            <h1>The Root Cause Solution to Chronic Pain: Why Everything You've Tried Has Failed (And What Actually Works)</h1>
+            <p class="subtitle">Discover the breakthrough approach that's helped over 10,000 people find lasting relief from chronic pain, fatigue, and health issues—without drugs or surgery.</p>
+            <div class="webinar-details">
+                <p><strong>📅 Date:</strong> Thursday, May 15th, 2024</p>
+                <p><strong>🕐 Time:</strong> 7:00 PM EST / 4:00 PM PST</p>
+                <p><strong>💻 Where:</strong> Online (Link provided after registration)</p>
+                <p><strong>⏱️ Duration:</strong> 60 minutes + Live Q&A</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="video-section">
+        <div class="container">
+            <div class="video-placeholder">Watch the Invitation</div>
+        </div>
+    </section>
+    
+    <section class="form-section">
+        <div class="container">
+            <h2>Save Your Free Seat</h2>
+            <p>Enter your details below to register for this exclusive live training</p>
+            <form>
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="Enter your best email" required>
+                </div>
+                <div class="form-group">
+                    <label>What is your biggest health challenge? (Optional)</label>
+                    <input type="text" placeholder="e.g., Chronic back pain, migraines, fatigue...">
+                </div>
+                <button type="submit" class="btn">YES! Reserve My Free Seat</button>
+            </form>
+            <p class="privacy">🔒 We respect your privacy. Unsubscribe at any time. Your information is never shared.</p>
+        </div>
+    </section>
+    
+    <section class="learn">
+        <div class="container">
+            <h2>What You'll Discover in This Free Training</h2>
+            <div class="learn-grid">
+                <div class="learn-item">
+                    <div class="learn-icon">1</div>
+                    <div>
+                        <h3>The Hidden Causes of Chronic Pain</h3>
+                        <p>Why your pain keeps coming back and the real reasons traditional treatments fail.</p>
+                    </div>
+                </div>
+                <div class="learn-item">
+                    <div class="learn-icon">2</div>
+                    <div>
+                        <h3>The 4-Pillar Healing System</h3>
+                        <p>How chiropractic care, advanced technology, nutrition, and lifestyle work together.</p>
+                    </div>
+                </div>
+                <div class="learn-item">
+                    <div class="learn-icon">3</div>
+                    <div>
+                        <h3>Breakthrough Technologies</h3>
+                        <p>How electrical stimulation, decompression, red light, and shockwave therapy accelerate healing.</p>
+                    </div>
+                </div>
+                <div class="learn-item">
+                    <div class="learn-icon">4</div>
+                    <div>
+                        <h3>Your Personalized Action Plan</h3>
+                        <p>Specific steps you can take immediately to start your journey to lasting wellness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="who-for">
+        <div class="container">
+            <h2>Who This Webinar Is For</h2>
+            <div class="who-grid">
+                <div class="who-item">
+                    <div class="icon">😫</div>
+                    <h3>Chronic Pain Sufferers</h3>
+                    <p>You've tried everything—medications, physical therapy, injections—but nothing provides lasting relief.</p>
+                </div>
+                <div class="who-item">
+                    <div class="icon">😴</div>
+                    <h3>Fatigue & Low Energy</h3>
+                    <p>You're tired of being tired and want to understand the root causes of your exhaustion.</p>
+                </div>
+                <div class="who-item">
+                    <div class="icon">🏃</div>
+                    <h3>Athletes & Active People</h3>
+                    <p>You want to optimize performance, prevent injuries, and recover faster from training.</p>
+                </div>
+                <div class="who-item">
+                    <div class="icon">👴</div>
+                    <h3>Health-Conscious Seniors</h3>
+                    <p>You refuse to accept that pain and limited mobility are "just part of getting older."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="social-proof">
+        <div class="container">
+            <h3>Join 2,847 People Already Registered</h3>
+            <div class="attendee-count">2,847</div>
+            <p>Seats are limited—register now to secure your spot</p>
+        </div>
+    </section>
+    
+    <section class="host">
+        <div class="container">
+            <div class="host-content">
+                <div class="host-image">Photo</div>
+                <div>
+                    <h2>Your Host</h2>
+                    <h3>Dr. Debra Asakura, DC</h3>
+                    <p class="title">Functional Wellness Expert | 30+ Years Experience</p>
+                    <p>Dr. Debra Asakura has helped over 10,000 patients achieve lasting wellness through her unique functional medicine approach. She combines traditional chiropractic care with cutting-edge therapeutic technologies to address the root cause of health issues—not just mask symptoms.</p>
+                    <p>Her mission is to empower people to take control of their health and discover their body's incredible ability to heal when given the right support.</p>
+                    <ul class="credentials">
+                        <li>Doctor of Chiropractic with 30+ years of clinical experience</li>
+                        <li>Certified in Functional Medicine and advanced therapeutic technologies</li>
+                        <li>Has trained with leading experts in neuromuscular therapy</li>
+                        <li>Featured speaker at wellness conferences nationwide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="countdown-section">
+            <h3>⏰ Webinar Starts In:</h3>
+            <div class="countdown">7 Days 4 Hours 23 Minutes</div>
+            <p>Don't miss out—spots are filling up fast!</p>
+        </div>
+    </div>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Is this webinar really free?</h3>
+                <p>Yes! This is a 100% free training. There is no cost to attend, and you'll receive valuable information you can implement immediately.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will there be a replay if I can't attend live?</h3>
+                <p>The replay will be available for 48 hours, but the live Q&A session and special bonus are only available to live attendees. We strongly recommend attending live if possible.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need any special software to attend?</h3>
+                <p>No special software needed. You'll receive a link to join via Zoom. You can join from your computer, tablet, or smartphone.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will you try to sell me something?</h3>
+                <p>At the end of the webinar, I'll share information about how you can work with me if you're interested. But there's no pressure—come for the education, stay for the value.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="final-cta">
+        <div class="container">
+            <h2>Don't Miss This Free Training</h2>
+            <p>Your journey to lasting wellness starts here</p>
+            <a href="#" class="btn-white">Reserve My Free Seat Now</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

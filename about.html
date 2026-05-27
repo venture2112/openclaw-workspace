@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Dr. Debra Asakura - Beyond Chiropractic</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 70px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4e4bc;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 101;
+        }
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #d4af37;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: #1a1a1a;
+                display: flex;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                margin: 15px 0;
+                font-size: 1.1em;
+                display: block;
+            }
+        }
+        
+        /* Hero */
+        .hero {
+            position: relative;
+            padding: 100px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551076805-e1869033e561?w=1920');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            transform: scale(1.1);
+            z-index: -2;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(124,154,109,0.88) 0%, rgba(245,240,230,0.85) 50%, rgba(212,175,55,0.82) 100%);
+            z-index: -1;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3em;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            color: #7c9a6d;
+        }
+        .hero p {
+            font-size: 1.3em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Story Section */
+        .story {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .story-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .story h2 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 25px;
+        }
+        .story h2 span {
+            color: #d4af37;
+        }
+        .story p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        /* Stats */
+        .stats {
+            padding: 80px 0;
+            background: #7c9a6d;
+            color: white;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        .stat-item h3 {
+            font-size: 3em;
+            color: #f4e4bc;
+            margin-bottom: 10px;
+        }
+        .stat-item p {
+            font-size: 1.1em;
+        }
+        
+        /* Philosophy */
+        .philosophy {
+            padding: 100px 0;
+            background: #faf7f0;
+        }
+        .philosophy h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .philosophy-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .philosophy-card .icon {
+            width: 80px;
+            height: 80px;
+            background: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2em;
+            color: white;
+        }
+        .philosophy-card h3 {
+            font-size: 1.4em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .philosophy-card p {
+            color: #666;
+        }
+        
+        /* Approach */
+        .approach {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .approach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .approach h2 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 25px;
+        }
+        .approach h2 span {
+            color: #7c9a6d;
+        }
+        .approach p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .approach-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        /* Technologies */
+        .technologies {
+            padding: 100px 0;
+            background: #f5f0e6;
+        }
+        .technologies h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 60px;
+        }
+        /* Core Values Section */
+        .core-values {
+            padding: 100px 0;
+            background: #faf7f0;
+        }
+        .core-values h2, .insurance h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .core-values h2 span, .insurance h2 span {
+            color: #7c9a6d;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 60px;
+            font-size: 1.1em;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7c9a6d 0%, #d4af37 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2em;
+        }
+        .value-card h3 {
+            font-size: 1.3em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .value-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        /* Insurance Section */
+        .insurance {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .insurance-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .insurance-info h3, .payment-options h3 {
+            font-size: 1.5em;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .insurance-info p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        .insurance-plans {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .plan-tag {
+            background: #f0f4ee;
+            color: #7c9a6d;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+        .payment-options ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        .payment-options li {
+            padding: 12px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05em;
+        }
+        .payment-options li:last-child {
+            border-bottom: none;
+        }
+        .insurance-note {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #2d3748;
+            padding: 20px 60px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .story-content, .approach-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .philosophy-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .insurance-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .story h2, .approach h2, .philosophy h2, .core-values h2, .insurance h2, .cta h2 {
+                font-size: 1.8em;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .philosophy-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><a href="index.html"><img src="logo.png" alt="Asakura Beyond Chiropractic"></a></div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Our <span>Story</span></h1>
+            <p>Three decades of transforming lives through functional wellness and cutting-edge therapeutic care.</p>
+        </div>
+    </section>
+    
+    <section class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="dr-asakura.png" alt="Dr. Debra Asakura">
+                </div>
+                <div>
+                    <h2>Meet Dr. Debra <span>Asakura</span></h2>
+                    <p>For over 30 years, Dr. Debra Asakura has been at the forefront of functional wellness, helping thousands of patients discover the root causes of their health challenges and achieve lasting transformation.</p>
+                    <p>After beginning her career in traditional chiropractic care, Dr. Asakura recognized that true healing requires addressing the whole person—not just symptoms. This led her to develop an integrative approach combining chiropractic expertise with advanced therapeutic technologies.</p>
+                    <p>Her practice in San Marcos, California has become a beacon of hope for those seeking alternatives to conventional medicine's band-aid solutions.</p>
+                    <p>"True wellness isn't about masking symptoms—it's about understanding why your body is expressing them and giving it the tools to heal itself."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>30+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Certifications & Training</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Conditions Treated</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Satisfaction Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="philosophy">
+        <div class="container">
+            <h2>Our Philosophy</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="icon">🔍</div>
+                    <h3>Root Cause Analysis</h3>
+                    <p>We don't treat symptoms—we find and address the underlying causes of your health challenges.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">🌿</div>
+                    <h3>Whole-Body Approach</h3>
+                    <p>Your body is interconnected. We treat you as a complete system, not isolated parts.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="icon">⚡</div>
+                    <h3>Advanced Technology</h3>
+                    <p>We leverage cutting-edge therapeutic tools to accelerate your healing journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="approach">
+        <div class="container">
+            <div class="approach-content">
+                <div>
+                    <h2>The <span>Asakura</span> Approach</h2>
+                    <p>Dr. Asakura's methodology goes far beyond traditional chiropractic adjustments. Her functional wellness approach integrates multiple disciplines to create personalized treatment plans that address your unique needs.</p>
+                    <p>Every patient begins with a comprehensive assessment that examines not just your symptoms, but your lifestyle, nutrition, stress levels, and overall wellness patterns. This holistic view allows us to identify the true source of your health concerns.</p>
+                    <p>Then, using state-of-the-art therapeutic technologies—including Electrical Stimulation, Compression Therapy, Red Light Cold Fusion, and Shockwave Therapy—we create a customized protocol designed to restore your body's natural healing capabilities.</p>
+                </div>
+                <div class="approach-image">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800" alt="Chiropractic Treatment">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="core-values">
+        <div class="container">
+            <h2>Our Core <span>Values</span></h2>
+            <p class="section-subtitle">The principles that guide everything we do</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💚</div>
+                    <h3>Patient-First Care</h3>
+                    <p>Your health goals are our priority. We listen, we care, and we create treatment plans tailored to your unique needs—not a one-size-fits-all approach.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>Root Cause Healing</h3>
+                    <p>We don't mask symptoms. We dig deep to find and treat the underlying source of your health challenges for lasting results.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✨</div>
+                    <h3>Integrity & Transparency</h3>
+                    <p>Honest communication, clear expectations, and ethical care. You'll always know what we're doing and why.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>Continuous Growth</h3>
+                    <p>We stay at the forefront of therapeutic technology and techniques to bring you the most effective treatments available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="insurance">
+        <div class="container">
+            <h2>Insurance & <span>Payment</span></h2>
+            <p class="section-subtitle">Making quality care accessible</p>
+            <div class="insurance-content">
+                <div class="insurance-info">
+                    <h3>We Accept Most Major Insurance Plans</h3>
+                    <p>We work with a variety of insurance providers to help make your care affordable. Our team can verify your benefits and explain your coverage before treatment begins.</p>
+                    <div class="insurance-plans">
+                        <span class="plan-tag">Medicare</span>
+                        <span class="plan-tag">Blue Cross</span>
+                        <span class="plan-tag">Aetna</span>
+                        <span class="plan-tag">UnitedHealthcare</span>
+                        <span class="plan-tag">Cigna</span>
+                        <span class="plan-tag">And More...</span>
+                    </div>
+                </div>
+                <div class="payment-options">
+                    <h3>Flexible Payment Options</h3>
+                    <ul>
+                        <li>✓ Most major credit cards accepted</li>
+                        <li>✓ Health Savings Accounts (HSA)</li>
+                        <li>✓ Flexible Spending Accounts (FSA)</li>
+                        <li>✓ Payment plans available</li>
+                        <li>✓ Cash-pay discounts</li>
+                    </ul>
+                    <p class="insurance-note">Not sure about your coverage? Contact us for a free insurance verification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Begin Your Wellness Journey</h2>
+            <p>Schedule your $49 initial consultation (regular $200) and discover what's possible.</p>
+            <a href="#" class="btn-white">Schedule Now</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

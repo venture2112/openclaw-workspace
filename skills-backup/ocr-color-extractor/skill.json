@@ -1,0 +1,16 @@
+{
+  "name": "ocr-color-extractor",
+  "description": "Extract text from images/PDFs using OCR and analyze colors using color extraction API",
+  "version": "1.0.0",
+  "license": "Proprietary",
+  "metadata": {
+    "openclaw": {
+      "requires": {
+        "env": ["OCR_SPACE_API_KEY", "COLOR_EXTRACTOR_API_KEY"],
+        "bins": []
+      },
+      "primaryEnv": "OCR_SPACE_API_KEY",
+      "emoji": "🎨"
+    }
+  }
+}

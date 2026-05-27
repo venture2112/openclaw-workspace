@@ -1,0 +1,55 @@
+{
+  "search_date": "2026-05-27",
+  "articles_found": [
+    {
+      "location": "San Marcos, California",
+      "title": "Senator Schiff Delivers Commencement Addresses to CSU San Marcos Graduates",
+      "summary": "U.S. Senator Adam Schiff delivered inspiring commencement addresses to the 2026 graduating classes of San Diego Miramar College and California State University San Marcos. Schiff encouraged thousands of graduates to 'amaze us' with their efforts to build a more secure future, emphasizing that their education is a passport to tremendous possibility.",
+      "source_url": "https://www.schiff.senate.gov/news/press-releases/photos-sen-schiff-delivers-commencement-addresses-to-graduating-classes-of-san-diego-miramar-college-and-california-state-university-san-marcos/",
+      "published_date": "2026-05-20",
+      "category": "education"
+    },
+    {
+      "location": "San Marcos, California",
+      "title": "CSU San Marcos Celebrates Topping-Out of New Hunter Hall of Science and Engineering",
+      "summary": "Cal State San Marcos celebrated a major construction milestone with the topping-out ceremony for Hunter Hall of Science and Engineering. The $110 million, 70,000-square-foot facility will feature laboratories, a robotics suite, and collaboration-focused learning spaces when it opens in fall 2027, supporting the expansion of engineering programs from 500 to nearly 2,000 students.",
+      "source_url": "https://schoolconstructionnews.com/2026/05/05/csusm-marks-topping-out-milestone-for-hunter-hall-of-science-and-engineering/",
+      "published_date": "2026-05-05",
+      "category": "education"
+    },
+    {
+      "location": "San Marcos, California",
+      "title": "San Marcos Directs $1 Million Federal Grant to Food Programs, Seniors and Parks",
+      "summary": "The City of San Marcos is putting over $1 million in federal Community Development Block Grant funds to work for its most vulnerable residents. The funding includes $14,000 for the San Diego Food Bank's 'Food for Kids Backpack' program, which will feed 50 students in the San Marcos Unified School District over weekends, ensuring children have the nutrition they need to succeed.",
+      "source_url": "https://www.10news.com/news/local-news/san-marcos-directs-more-than-1-million-federal-grant-to-food-programs-seniors-and-parks",
+      "published_date": "2026-05-07",
+      "category": "community"
+    },
+    {
+      "location": "Escondido, California",
+      "title": "New Public Art Installation 'Threshold Five' Unveiled at Escondido's Kit Carson Park",
+      "summary": "Visitors to Kit Carson Park can now experience Threshold Five, a large-scale public art installation unveiled by the Escondido Community Foundation. Created by San Diego-based nonprofit ArtBuilds, the five-part metal sculpture features nested hexagonal forms creating a portal-like experience, expanding access to interactive, community-centered art in public spaces.",
+      "source_url": "https://www.sdfoundation.org/news-events/sdf-news/new-public-art-to-inspire-connection-at-escondidos-kit-carson-park/",
+      "published_date": "2026-05-15",
+      "category": "arts"
+    },
+    {
+      "location": "Escondido, California",
+      "title": "California Center for the Arts Escondido Launches Legacy Wall for Community Support",
+      "summary": "The California Center for the Arts, Escondido Foundation has launched 'The Legacy Wall' inviting the community to leave a lasting mark while supporting the arts. This new initiative inside the Concert Hall allows supporters to become part of the Center's story, continuing a tradition of community engagement that has made the arts thrive in Escondido.",
+      "source_url": "https://www.times-advocate.com/articles/residents-invited-to-leave-mark-on-legacy-wall/",
+      "published_date": "2026-05-20",
+      "category": "arts"
+    },
+    {
+      "location": "Escondido, California",
+      "title": "61st Annual Independence Day Festival Returns to Escondido's Grape Day Park",
+      "summary": "The California Center for the Arts, Escondido announces the return of the 61st Annual Independence Day Festival, a cherished community tradition. The July 4th celebration in Grape Day Park will feature live performances by celebrated artists, local food trucks, craft beverages, an artisan market, games and activities for all ages, and a spectacular fireworks display.",
+      "source_url": "https://www.thevistapress.com/california-center-for-the-arts-escondido-announces-the-61st-annual-independence-day-festival/",
+      "published_date": "2026-05-18",
+      "category": "community"
+    }
+  ],
+  "control_board_status": "API requires authentication - articles saved locally for manual review",
+  "notes": "Vista CA: Limited recent positive news found. Additional searches needed for Vista-specific stories."
+}

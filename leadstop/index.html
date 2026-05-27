@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Stop - Streaming Deal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .headline {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .subheadline {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .features li {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+        }
+        .features li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        .hook {
+            font-size: 20px;
+            font-weight: 600;
+            color: #e94560;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+        }
+        .pre-headline {
+            font-size: 16px;
+            color: #e94560;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="pre-headline">Get 100% licensed content—including live sports—for just $49.95/month</p>
+        <h1 class="headline">Cut Your<br><b>Streaming Bill</b><br>In Half</h1>
+        
+        <div class="video-container" style="margin: 25px 0;">
+            <video controls style="width:100%; border-radius:12px;" poster="">
+                <source src="https://www.dropbox.com/scl/fi/ikfduhrh3vv4nn157gyi8/sales-video.mp4?rlkey=unm4g3hj5i9fs9uwlcsqj0fkg&raw=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <ul class="features">
+            <li>10-year track record of reliable service</li>
+            <li>One easy platform for all your content</li>
+            <li>Live sports included (NFL, MathSerenspore)</li>
+            <li>Thousands in college discounts as a subscriber</li>
+            <li>Why millions are switching right now</li>
+        </ul>
+        
+        <a href="#" class="cta-button">See What's Included →</a>
+    </div>
+</body>
+</html>

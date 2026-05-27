@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Testimonials | Dr. Debra Asakura - Beyond Chiropractic</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 70px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4e4bc;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 101;
+        }
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #d4af37;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: #1a1a1a;
+                display: flex;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                margin: 15px 0;
+                font-size: 1.1em;
+                display: block;
+            }
+        }
+        
+        /* Page Header */
+        .page-header {
+            position: relative;
+            padding: 100px 0 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            transform: scale(1.1);
+            z-index: -2;
+        }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(124,154,109,0.88) 0%, rgba(245,240,230,0.85) 50%, rgba(212,175,55,0.82) 100%);
+            z-index: -1;
+        }
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        .page-header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .page-header h1 span {
+            color: #d4af37;
+        }
+        .page-header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            font-size: 80px;
+            color: #d4af37;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c9a6d 0%, #d4af37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .author-info h4 {
+            color: #1a1a1a;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .author-info p {
+            color: #7c9a6d;
+            font-size: 0.9em;
+        }
+        .testimonial-rating {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        /* Featured Testimonial */
+        .featured-testimonial {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 60px;
+        }
+        .featured-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .featured-content::before {
+            content: '"';
+            font-size: 120px;
+            color: #d4af37;
+            opacity: 0.3;
+            display: block;
+            line-height: 0.5;
+            margin-bottom: 30px;
+        }
+        .featured-text {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .featured-author h4 {
+            color: #d4af37;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        .featured-author p {
+            opacity: 0.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: #d4af37;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2.5em;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2em;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn {
+            display: inline-block;
+            background: #1a1a1a;
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .footer-brand p {
+            color: #a0aec0;
+            line-height: 1.8;
+        }
+        .footer-links h4 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .footer-links a {
+            display: block;
+            color: #a0aec0;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #d4af37;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            color: #666;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 {
+                font-size: 2em;
+            }
+            .featured-text {
+                font-size: 1.2em;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><a href="index.html"><img src="logo.png" alt="Asakura Beyond Chiropractic"></a></div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <div class="container">
+            <h1>Patient <span>Testimonials</span></h1>
+            <p>Real stories from real patients who have transformed their health and reclaimed their lives.</p>
+        </div>
+    </section>
+    
+    <section class="featured-testimonial">
+        <div class="container">
+            <div class="featured-content">
+                <p class="featured-text">After suffering from chronic back pain for over 15 years and trying everything from surgery to medications, I finally found relief with Dr. Asakura. Her functional wellness approach addressed issues that three other doctors missed. Within three months, my pain was 80% better. Within six months, I felt better than I had in 20 years. She didn't just treat my symptoms—she found the root cause.</p>
+                <div class="featured-author">
+                    <h4>Margaret T.</h4>
+                    <p>Age 62, San Marcos, CA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-grid">
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">I was skeptical about 'functional wellness' but desperate for help with my migraines. Dr. Asakura discovered they were caused by neck tension and poor posture. Three months later, my migraines are 90% gone. This approach really works.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>James R.</h4>
+                            <p>Age 45, Vista, CA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">As an athlete, I need to stay in peak condition. The shockwave therapy and decompression treatments have cut my recovery time in half. Dr. Asakura understands that performance isn't just about fixing injuries—it's about preventing them.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sarah K.</h4>
+                            <p>Age 34, Triathlete</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">The BrainHealthPlus program has been life-changing for my mother. At 78, she was worried about her memory and balance. After just 8 weeks, her confidence is back, and she's more active than she's been in years. Worth every penny.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h4>David M.</h4>
+                            <p>Son of Patient, Age 52</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">I came in for back pain and ended up solving digestive issues I'd had for a decade. Dr. Asakura's whole-body approach connected dots that no one else even looked for. She's not just a chiropractor—she's a health detective.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <h4>Lisa P.</h4>
+                            <p>Age 41, Carlsbad, CA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">The red light therapy has been amazing for my arthritis. I was facing knee replacement surgery, but after 6 weeks of treatment, I can walk without pain. Dr. Asakura gave me options when other doctors only offered surgery.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Robert H.</h4>
+                            <p>Age 68, Escondido, CA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">After a car accident, I couldn't turn my head without pain. Physical therapy helped some, but Dr. Asakura's combination of chiropractic care and electrical stimulation got me back to 100%. I can finally play with my kids again.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">K</div>
+                        <div class="author-info">
+                            <h4>Karen W.</h4>
+                            <p>Age 38, San Marcos, CA</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Healing Journey?</h2>
+            <p>Join thousands of patients who have transformed their health with Dr. Asakura's functional wellness approach.</p>
+            <a href="contact.html" class="btn">Schedule Your Consultation</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Asakura Beyond Chiropractic">
+                    <p>Healing your body and reclaiming your life through functional wellness and advanced therapeutic technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="services.html">Chiropractic Care</a>
+                    <a href="services.html">Functional Wellness</a>
+                    <a href="services.html">BrainHealthPlus</a>
+                    <a href="services.html">Laser Therapy</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <a href="tel:760-419-0002">(760) 419-0002</a>
+                    <p style="color: #a0aec0; margin-top: 10px;">1645 S Rancho Santa Fe Rd, Ste 104<br>San Marcos, CA 92078</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Debra Asakura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

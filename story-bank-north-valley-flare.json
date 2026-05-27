@@ -1,0 +1,81 @@
+{
+  "publication": "North Valley Flare",
+  "publicationId": "6a00019fa166af267ed2cf05",
+  "location": "Escondido, CA",
+  "stories": [
+    {
+      "id": 1,
+      "headline": "Love Esco: Escondido Volunteers Unite to Beautify Spaces and Support Neighbors",
+      "source": "https://www.loveesco.org/",
+      "sourceName": "Love Esco",
+      "summary": "Love Esco brings Escondido neighbors together through volunteer work that beautifies public spaces, serves those in need, cares for teachers, and supports local businesses. The organization focuses on crossing streets, generations, and cultures to celebrate what makes Escondido unique.",
+      "localRelevance": "Pure Escondido community spirit. Local volunteers making tangible differences in their own city through acts of kindness and service.",
+      "suggestedKeyword": "Love Esco Escondido volunteers",
+      "wordCount": 600,
+      "used": true,
+      "dateFound": "2026-05-19",
+      "articleId": "6a0be5d6a166af267ee789cb",
+      "articleUrl": "https://northvalleyflare.com/a/love-esco-escondido-volunteers-unite"
+    },
+    {
+      "id": 2,
+      "headline": "Downtown Escondido Housing Project Approved Near Grand Avenue",
+      "source": "https://www.newsbreak.com/escondido-ca",
+      "sourceName": "NewsBreak",
+      "summary": "City Council has approved a housing development that will recycle an existing structure just three blocks from Grand Avenue in downtown Escondido, addressing local housing needs while preserving character.",
+      "localRelevance": "Direct impact on downtown Escondido development and housing availability. Grand Avenue is the heart of the city.",
+      "suggestedKeyword": "Escondido downtown housing",
+      "wordCount": 700,
+      "used": false,
+      "dateFound": "2026-05-16"
+    },
+    {
+      "id": 3,
+      "headline": "How Bright Will Escondido's Grand Avenue Arch Glow by July 4?",
+      "source": "https://patch.com/california/escondido",
+      "sourceName": "Patch",
+      "summary": "The iconic Grand Avenue arch is getting lighting upgrades with a target completion date before Independence Day, promising to become a more visible landmark for the community.",
+      "localRelevance": "The Grand Avenue arch is an Escondido landmark. July 4th timing makes this timely and community-focused.",
+      "suggestedKeyword": "Grand Avenue arch Escondido",
+      "wordCount": 500,
+      "used": false,
+      "dateFound": "2026-05-16"
+    },
+    {
+      "id": 4,
+      "headline": "NCTD Pursuing SPRINTER Fleet Replacement Affecting Escondido Commuters",
+      "source": "https://thecoastnews.com/nctd-seeks-to-replace-sprinter-fleet-expand-microtransit-to-vista/",
+      "sourceName": "The Coast News",
+      "summary": "The North County Transit District is pursuing replacement of its SPRINTER rail fleet servicing Oceanside, Vista, San Marcos and Escondido following an increase in mechanical failures and maintenance challenges.",
+      "localRelevance": "The SPRINTER connects Escondido to Vista, San Marcos, and Oceanside. Fleet replacement will directly impact Escondido commuters who rely on this 22-mile east-west corridor.",
+      "suggestedKeyword": "SPRINTER train Escondido NCTD",
+      "wordCount": 650,
+      "used": false,
+      "dateFound": "2026-05-19"
+    },
+    {
+      "id": 5,
+      "headline": "Palomar College Opens New Escondido Education Center for Spring 2026",
+      "source": "https://www.palomar.edu/escondido/",
+      "sourceName": "Palomar College",
+      "summary": "Palomar College's Escondido Education Center offers classes and services to Escondido residents, with Spring 2026 classes starting January 26th. The center provides access to higher education without commuting to San Marcos.",
+      "localRelevance": "Palomar College is based in San Marcos but serves many Escondido students. The Escondido Education Center brings educational opportunities directly to the city.",
+      "suggestedKeyword": "Palomar College Escondido",
+      "wordCount": 550,
+      "used": false,
+      "dateFound": "2026-05-19"
+    },
+    {
+      "id": 6,
+      "headline": "Housing Authority Opens Waitlists for North County Housing in San Marcos and Fallbrook",
+      "source": "https://www.newsbreak.com/escondido-ca",
+      "sourceName": "NewsBreak",
+      "summary": "The Housing Authority of the County of San Diego opened waitlists for project-based vouchers at two new housing developments in North County, located in San Marcos and Fallbrook.",
+      "localRelevance": "Escondido residents may apply for these North County housing opportunities. The Housing Authority serves the entire region including Escondido families seeking affordable housing.",
+      "suggestedKeyword": "San Diego County housing waitlist Escondido",
+      "wordCount": 600,
+      "used": false,
+      "dateFound": "2026-05-19"
+    }
+  ]
+}

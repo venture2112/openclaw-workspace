@@ -1,0 +1,1 @@
+Compact MEMORY.md: backup to memory/backups/MEMORY-YYYYMMDD.md, remove empty lines/trailing whitespace, report file size before/after

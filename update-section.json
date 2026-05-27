@@ -1,0 +1,12 @@
+{
+  "promptOutPut": "<p>La Jolla's Birch Aquarium has achieved a historic milestone that has marine scientists worldwide buzzing. The team successfully settled more than 15 red octopuses, marking the first time this species has been hatched, raised, and settled in aquarium care anywhere on Earth.</p><p>&nbsp;</p><p>The breakthrough offers rare insights into one of the most mysterious phases of cephalopod life, as scientists have rarely observed the transition from free-swimming planktonic stage to settled seafloor lifestyle.</p><p>&nbsp;</p><p><a href=\"https://northvalleyflare.com/a/birch-aquarium-makes-history-with-first-ever-red-octopus-settlement\" style=\"color:#FF3B1F;\"><strong>Read More →</strong></a></p>",
+  "links": [
+    {
+      "urlFor": {"type": "WORD"},
+      "word": "<strong>Read More →</strong>",
+      "url": "https://northvalleyflare.com/a/birch-aquarium-makes-history-with-first-ever-red-octopus-settlement",
+      "hasLink": true,
+      "type": "CONTENT"
+    }
+  ]
+}

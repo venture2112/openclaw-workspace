@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #334155;
+  line-height: 1.6;
+  background: #f9fafb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+a {
+  color: #046bd2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #045cb4;
+}
+
+/* Navigation styles */
+.nav-link {
+  color: #334155;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #045cb4;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #046bd2;
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #045cb4;
+  color: #ffffff;
+}
+
+/* Header background */
+.header-bg {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Card/section backgrounds */
+.card-bg {
+  background-color: #ffffff;
+}
+
+/* Footer */
+.footer-bg {
+  background-color: #f9fafb;
+  border-top: 1px solid #e2e8f0;
+}

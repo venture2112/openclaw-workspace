@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Decompression Therapy | Dr. Debra Asakura</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fff;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 70px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4e4bc;
+        }
+        
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+            color: white;
+        }
+        .article-category {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .article-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .article-meta {
+            opacity: 0.8;
+            font-size: 0.95em;
+        }
+        
+        /* Article Content */
+        .article-content {
+            padding: 60px 0;
+            background: white;
+        }
+        .article-content h2 {
+            font-size: 1.8em;
+            color: #1a1a1a;
+            margin: 40px 0 20px;
+        }
+        .article-content h3 {
+            font-size: 1.4em;
+            color: #7c9a6d;
+            margin: 30px 0 15px;
+        }
+        .article-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05em;
+        }
+        .article-content ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .article-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            color: #555;
+        }
+        .article-content strong {
+            color: #1a1a1a;
+        }
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: #d4af37;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            background: #b8962e;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .footer-brand p {
+            color: #a0aec0;
+            line-height: 1.8;
+        }
+        .footer-links h4 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .footer-links a {
+            display: block;
+            color: #a0aec0;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #d4af37;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            color: #666;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.8em;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><a href="index.html"><img src="logo.png" alt="Asakura Beyond Chiropractic"></a></div>
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="article-header">
+        <div class="container">
+            <span class="article-category">Circulation & Recovery</span>
+            <h1>Understanding Decompression Therapy: How Gentle Pressure Supports Your Body's Natural Healing</h1>
+            <p class="article-meta">By Dr. Debra Asakura | 7 min read</p>
+        </div>
+    </section>
+    
+    <section class="article-content">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200" alt="Decompression therapy for circulation" class="article-image">
+            
+            <p>Your circulatory system is the lifeline of your body, delivering oxygen and nutrients to every cell while removing waste products. When this system becomes compromised—whether from injury, surgery, chronic conditions, or simply the effects of aging—your body's ability to heal and function optimally diminishes. Decompression therapy offers a gentle, non-invasive approach to supporting and enhancing your body's natural circulation.</p>
+            
+            <h2>What Is Decompression Therapy?</h2>
+            
+            <p>Decompression therapy involves applying controlled pressure to specific areas of the body, typically the limbs, using specialized garments or devices. This external pressure helps veins and lymphatic vessels work more efficiently, promoting better blood flow and reducing fluid buildup in tissues.</p>
+            
+            <p>The concept isn't new—physicians have recommended decompression stockings for decades to help with conditions like varicose veins and post-surgical recovery. Modern decompression therapy, however, has evolved significantly. Today's systems offer graduated pressure, dynamic decompression patterns, and precise control that can be tailored to individual needs and conditions.</p>
+            
+            <h2>How Decompression Supports Circulation</h2>
+            
+            <p>Your veins face a unique challenge: they must move blood back to the heart against gravity, without the benefit of the heart's pumping action. Instead, veins rely on one-way valves and the natural muscle contractions that occur with movement. When these mechanisms become compromised, blood can pool in the lower extremities, leading to swelling, discomfort, and eventually tissue damage.</p>
+            
+            <p>Decompression therapy addresses this by:</p>
+            
+            <ul>
+                <li><strong>Supporting vein walls:</strong> External pressure helps veins maintain their shape and prevents excessive stretching that can damage valves</li>
+                <li><strong>Enhancing venous return:</strong> Compression assists the natural pumping action, helping blood flow more efficiently toward the heart</li>
+                <li><strong>Reducing venous diameter:</strong> Narrower veins mean faster blood flow, which reduces the risk of clot formation</li>
+                <li><strong>Improving lymphatic drainage:</strong> Compression helps move lymph fluid, reducing swelling and supporting immune function</li>
+            </ul>
+            
+            <h2>Benefits Beyond the Obvious</h2>
+            
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200" alt="Athletic recovery and wellness" class="article-image">
+            
+            <p>While decompression therapy is well-known for treating conditions like lymphedema and venous insufficiency, its benefits extend far beyond these applications:</p>
+            
+            <h3>Athletic Recovery</h3>
+            <p>After intense exercise, muscles accumulate metabolic waste products that contribute to soreness and fatigue. Decompression therapy accelerates the removal of these substances while delivering fresh oxygen and nutrients to tired tissues. Many athletes report reduced muscle soreness and faster recovery times when incorporating decompression into their post-workout routine.</p>
+            
+            <h3>Chronic Condition Management</h3>
+            <p>People with diabetes, peripheral artery disease, and other circulatory conditions often experience compromised blood flow to extremities. Decompression therapy, when properly applied and monitored, can help manage symptoms and prevent complications like ulcers and infections.</p>
+            
+            <h3>Post-Surgical Healing</h3>
+            <p>Surgery disrupts normal circulation and often results in swelling as part of the inflammatory response. Compression helps manage this swelling, reduces the risk of blood clots, and can accelerate the healing process by ensuring tissues receive adequate blood supply.</p>
+            
+            <h2>The Science of Graduated Decompression</h2>
+            
+            <p>Not all decompression is created equal. Medical-grade decompression garments use a graduated approach, meaning the pressure is strongest at the extremities (ankles or wrists) and gradually decreases as the garment moves toward the heart. This design works with your body's natural physiology, encouraging fluid to move in the right direction.</p>
+            
+            <p>Decompression levels are measured in millimeters of mercury (mmHg), with different levels appropriate for different conditions:</p>
+            
+            <ul>
+                <li><strong>8-15 mmHg:</strong> Mild decompression for general wellness and fatigue prevention</li>
+                <li><strong>15-20 mmHg:</strong> Moderate decompression for minor swelling and varicose veins</li>
+                <li><strong>20-30 mmHg:</strong> Firm decompression for more significant venous issues and medical conditions</li>
+                <li><strong>30-40 mmHg:</strong> Extra firm decompression for severe conditions, typically requiring medical supervision</li>
+            </ul>
+            
+            <h2>When Decompression Therapy Makes Sense</h2>
+            
+            <p>Compression therapy may be beneficial if you experience:</p>
+            
+            <ul>
+                <li>Chronic leg swelling or heaviness, especially after standing for long periods</li>
+                <li>Varicose veins or spider veins</li>
+                <li>Slow-healing wounds on the lower legs</li>
+                <li>Frequent muscle cramps or restless legs</li>
+                <li>Recovery from surgery or injury</li>
+                <li>Prolonged periods of immobility, such as during travel</li>
+            </ul>
+            
+            <p>However, decompression therapy isn't appropriate for everyone. People with certain arterial diseases, acute infections, or severe peripheral neuropathy may need to avoid decompression or use it only under close medical supervision. A proper assessment is essential before beginning any decompression protocol.</p>
+            
+            <h2>Integrating Compression Into Your Wellness Routine</h2>
+            
+            <p>Decompression therapy works best as part of a comprehensive approach to circulatory health. Regular movement, proper hydration, elevation of legs when resting, and maintaining a healthy weight all support your circulatory system. Decompression enhances these efforts by providing consistent, therapeutic pressure that supports your body's natural mechanisms.</p>
+            
+            <p>Whether you're recovering from an injury, managing a chronic condition, or simply seeking to optimize your body's performance, understanding and properly utilizing decompression therapy can be a valuable tool in your wellness toolkit. As with any therapeutic intervention, working with a knowledgeable practitioner ensures you receive the appropriate level of decompression for your specific needs and conditions.</p>
+            
+            <a href="articles.html" class="back-link">← Back to Articles</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Asakura Beyond Chiropractic">
+                    <p>Healing your body and reclaiming your life through functional wellness and advanced therapeutic technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="services.html">Chiropractic Care</a>
+                    <a href="services.html">Functional Wellness</a>
+                    <a href="services.html">BrainHealthPlus</a>
+                    <a href="services.html">Laser Therapy</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <a href="tel:760-419-0002">(760) 419-0002</a>
+                    <p style="color: #a0aec0; margin-top: 10px;">1645 S Rancho Santa Fe Rd, Ste 104<br>San Marcos, CA 92078</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Debra Asakura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

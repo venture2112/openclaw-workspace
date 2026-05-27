@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Debra Asakura | Beyond Chiropractic - Functional Wellness</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 70px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4e4bc;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 101;
+        }
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #d4af37;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: #1a1a1a;
+                display: flex;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                margin: 15px 0;
+                font-size: 1.1em;
+                display: block;
+            }
+        }
+        
+        /* Hero - Full Width with Overlay */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(124,154,109,0.75) 50%, rgba(212,175,55,0.7) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 0 30px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.2);
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9em;
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            color: #d4af37;
+            display: block;
+        }
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        .btn {
+            display: inline-block;
+            background: #d4af37;
+            color: white;
+            padding: 20px 60px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #c9a227;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background: #1a1a1a;
+            padding: 60px 0;
+            color: white;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 3em;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        .stat-item p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        /* Why Different Section */
+        .why-different {
+            padding: 100px 0;
+            background: #faf7f0;
+        }
+        .why-different h2, .conditions h2, .journey h2, .results h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .why-different h2 span, .conditions h2 span, .journey h2 span, .results h2 span {
+            color: #7c9a6d;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 60px;
+            font-size: 1.1em;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .feature-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7c9a6d 0%, #d4af37 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2em;
+        }
+        .feature-box h3 {
+            font-size: 1.3em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .feature-box p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Conditions Section */
+        .conditions {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .conditions-categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .condition-category {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 35px 30px;
+            border-top: 4px solid #7c9a6d;
+        }
+        .condition-category h3 {
+            font-size: 1.4em;
+            color: #2d3748;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .condition-category ul {
+            list-style: none;
+        }
+        .condition-category li {
+            padding: 12px 0;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1em;
+        }
+        .condition-category li:last-child {
+            border-bottom: none;
+        }
+        .more-category {
+            background: linear-gradient(135deg, #7c9a6d 0%, #5a7a4a 100%);
+            color: white;
+            text-align: center;
+        }
+        .more-category h3 {
+            color: white;
+        }
+        .more-category p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        .btn-secondary {
+            display: inline-block;
+            background: white;
+            color: #7c9a6d;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .btn-secondary:hover {
+            transform: scale(1.05);
+        }
+
+        /* Journey Section */
+        .journey {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f0e6 0%, #faf7f0 100%);
+        }
+        .journey-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .step {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            flex: 0 0 220px;
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+        }
+        .step h3 {
+            font-size: 1.3em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .step p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .step-arrow {
+            font-size: 2em;
+            color: #7c9a6d;
+            font-weight: bold;
+        }
+
+        /* Results Section */
+        .results {
+            padding: 100px 0;
+            background: #1a1a1a;
+            color: white;
+        }
+        .results h2 {
+            color: white;
+        }
+        .results h2 span {
+            color: #d4af37;
+        }
+        .results .section-subtitle {
+            color: #aaa;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .result-card {
+            background: #2d3748;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .result-stat {
+            font-size: 3em;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        .result-card p {
+            color: #aaa;
+            font-size: 0.95em;
+        }
+        
+        /* Testimonial Highlight */
+        .testimonial-highlight {
+            padding: 100px 0;
+            background: #fff;
+            text-align: center;
+        }
+        .testimonial-highlight blockquote {
+            font-size: 2em;
+            color: #2d3748;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.4;
+        }
+        .testimonial-highlight blockquote::before {
+            content: '"';
+            font-size: 3em;
+            color: #d4af37;
+            display: block;
+            margin-bottom: -20px;
+        }
+        .testimonial-author {
+            color: #7c9a6d;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #7c9a6d 0%, #5a7a4a 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #2d3748;
+            padding: 20px 60px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            .hero h1 {
+                font-size: 3em;
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .conditions-categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .journey-steps {
+                flex-direction: column;
+            }
+            .step-arrow {
+                transform: rotate(90deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid, .conditions-categories, .results-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-highlight blockquote {
+                font-size: 1.5em;
+            }
+            .why-different h2, .conditions h2, .journey h2, .results h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><a href="index.html"><img src="logo.png" alt="Asakura Beyond Chiropractic"></a></div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">30+ Years of Excellence</div>
+            <h1>Heal Your Body.<br><span>Reclaim Your Life.</span></h1>
+            <p>Discover the root cause of your health challenges with advanced therapeutic technologies and functional wellness expertise.</p>
+            <a href="#consultation" class="btn">Schedule Your Consultation</a>
+        </div>
+    </section>
+    
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>30+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3,500+</h3>
+                    <p>Patients Helped</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10</h3>
+                    <p>Advanced Technologies</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Commitment to You</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="why-different">
+        <div class="container">
+            <h2>What Makes Us <span>Different</span></h2>
+            <p class="section-subtitle">Experience healthcare that treats the root cause, not just symptoms</p>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Root Cause Focus</h3>
+                    <p>We don't mask symptoms. We identify and treat the underlying source of your health challenges for lasting results.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Care</h3>
+                    <p>No two bodies are alike. Your treatment plan is customized specifically for your unique needs and goals.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Advanced Technology</h3>
+                    <p>10+ cutting-edge therapeutic modalities combined with decades of chiropractic expertise.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">💚</div>
+                    <h3>Whole-Person Approach</h3>
+                    <p>We address physical, nutritional, and lifestyle factors for complete wellness transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="conditions">
+        <div class="container">
+            <h2>Conditions We <span>Treat</span></h2>
+            <p class="section-subtitle">Expert care for a wide range of health challenges</p>
+            <div class="conditions-categories">
+                <div class="condition-category">
+                    <h3>🧠 Neurological</h3>
+                    <ul>
+                        <li>Migraines & Headaches</li>
+                        <li>Brain Fog & Memory Issues</li>
+                        <li>Nerve Pain & Neuropathy</li>
+                        <li>Balance & Coordination Problems</li>
+                        <li>Sciatica & Radiculopathy</li>
+                    </ul>
+                </div>
+                <div class="condition-category">
+                    <h3>🦴 Injury & Pain</h3>
+                    <ul>
+                        <li>Chronic Back & Neck Pain</li>
+                        <li>Sports Injuries</li>
+                        <li>Joint Pain & Arthritis</li>
+                        <li>Muscle Spasms & Strains</li>
+                        <li>Whiplash & Trauma</li>
+                    </ul>
+                </div>
+                <div class="condition-category">
+                    <h3>⚡ Functional</h3>
+                    <ul>
+                        <li>Poor Posture</li>
+                        <li>Limited Range of Motion</li>
+                        <li>Inflammation & Swelling</li>
+                        <li>Mobility Issues</li>
+                        <li>Wellness Optimization</li>
+                    </ul>
+                </div>
+                <div class="condition-category more-category">
+                    <h3>➕ More</h3>
+                    <p>And many other conditions affecting your quality of life. If you're experiencing discomfort or limited function, we can help.</p>
+                    <a href="services.html" class="btn-secondary">View All Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey">
+        <div class="container">
+            <h2>Your Journey to <span>Wellness</span></h2>
+            <p class="section-subtitle">A simple 4-step process to lasting health</p>
+            <div class="journey-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>Comprehensive assessment to understand your health history, concerns, and goals</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Diagnosis</h3>
+                    <p>Advanced testing and analysis to identify root causes, not just symptoms</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Treatment</h3>
+                    <p>Personalized combination of therapies tailored to your specific needs</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Transformation</h3>
+                    <p>Ongoing support and maintenance for lasting wellness and vitality</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="container">
+            <h2>Results You Can <span>Expect</span></h2>
+            <p class="section-subtitle">Real outcomes from our patient-centered approach</p>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-stat">85%</div>
+                    <p>Report significant pain reduction within first month</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-stat">90%</div>
+                    <p>Experience improved mobility and range of motion</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-stat">3,500+</div>
+                    <p>Patients helped over 30+ years of practice</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-stat">95%</div>
+                    <p>Would recommend to family and friends</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonial-highlight">
+        <div class="container">
+            <blockquote>After years of chronic pain, Dr. Asakura gave me my life back. Her approach is unlike anything I've experienced.</blockquote>
+            <p class="testimonial-author">— Margaret T., Patient</p>
+        </div>
+    </section>
+    
+    <section class="cta" id="consultation">
+        <div class="container">
+            <h2>Ready to Start Your Journey?</h2>
+            <p>Take the first step toward lasting wellness. Schedule your consultation today.</p>
+            <a href="#" class="btn-white">Schedule Now</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

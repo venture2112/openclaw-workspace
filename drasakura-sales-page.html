@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Wellness: Beyond Chiropractic | Dr. Debra Asakura</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero .subheadline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .hero .doctor-info {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .hero .equipment {
+            font-size: 1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        /* Problem Section */
+        .problem {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .problem h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .problem p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #555;
+        }
+        /* Solution Section */
+        .solution {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .solution h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .solution-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .solution-item h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        /* Equipment Section */
+        .equipment-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .equipment-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .equipment-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .equipment-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        /* Offer Section */
+        .offer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .offer h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .offer-box {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .price {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .price span {
+            font-size: 0.5em;
+        }
+        .guarantee {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .testimonial-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .testimonial-item .quote {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .testimonial-item .author {
+            font-weight: bold;
+            color: #667eea;
+        }
+        /* About Doctor Section */
+        .about-doctor {
+            padding: 80px 0;
+            background: white;
+        }
+        .about-doctor-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .about-doctor h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        .about-doctor p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .about-doctor .credentials {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .about-doctor .credentials h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        .about-doctor .credentials ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about-doctor .credentials li {
+            padding: 5px 0;
+            color: #555;
+        }
+        .about-doctor .credentials li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        /* FAQ Section */
+        .faq-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .faq-item h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .faq-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        .process h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .process-step {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .process-step .step-number {
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        .process-step h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        @media (max-width: 768px) {
+            .about-doctor-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" style="background: linear-gradient(rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920'); background-size: cover; background-position: center;">
+    <div class="container">
+        <h1>FINALLY... A Doctor Who Looks At Your<br><span style="color: #ffd700;">WHOLE BODY</span></h1>
+        <p class="subheadline">Not Just Your Spine</p>
+        <p class="doctor-info">
+            <strong>Dr. Debra Asakura, DC</strong><br>
+            30+ Years Helping Patients Achieve Total Wellness
+        </p>
+        <p class="equipment">
+            Using Advanced Technology: ESM • Compression Therapy • Red Light • Shockwave
+        </p>
+        <a href="#offer" class="cta-button">YES! I Want The $49 Initial Consultation</a>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem" style="background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920'); background-size: cover; background-position: center;">
+    <div class="container">
+        <h2>Are You Tired of Treating Symptoms Instead of Finding the Root Cause?</h2>
+        <p>Most doctors give you a 10-minute visit and a prescription. They treat your pain, but never ask WHY you have pain in the first place.</p>
+        <p>You deserve better. You deserve a doctor who looks at your whole body—your nutrition, your lifestyle, your movement patterns, and yes, your spine too.</p>
+        <p><strong>That's functional wellness. And that's exactly what we do.</strong></p>
+    </div>
+</section>
+
+<!-- Solution Section -->
+<section class="solution">
+    <div class="container">
+        <h2>Functional Wellness: Beyond Adjustments to Total Health</h2>
+        <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 40px;">We don't just crack your back and send you home. We use a comprehensive approach that addresses the root cause of your health issues.</p>
+        
+        <div class="solution-grid">
+            <div class="solution-item">
+                <h3>🎯 Root Cause Analysis</h3>
+                <p>We dig deep to find WHY you're experiencing pain or dysfunction, not just mask the symptoms.</p>
+            </div>
+            <div class="solution-item">
+                <h3>🔬 Advanced Technology</h3>
+                <p>Electrical Stimulation, Compression Therapy, Red Light Cold Fusion, and Shockwave Therapy.</p>
+            </div>
+            <div class="solution-item">
+                <h3>📋 Personalized Plans</h3>
+                <p>No cookie-cutter treatments. Your plan is tailored to YOUR body, YOUR goals, YOUR lifestyle.</p>
+            </div>
+            <div class="solution-item">
+                <h3>💪 Whole-Body Approach</h3>
+                <p>We look at nutrition, movement, stress, and structure together—not in isolation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Equipment Section -->
+<section class="equipment-section">
+    <div class="container">
+        <h2>State-of-the-Art Equipment</h2>
+        <div class="equipment-grid">
+            <div class="equipment-item">
+                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=640" alt="Shockwave Therapy">
+                <h3>Shockwave Therapy</h3>
+                <p>Breaks up scar tissue and stimulates regeneration for chronic pain relief.</p>
+            </div>
+            <div class="equipment-item">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=640" alt="Compression Therapy">
+                <h3>Compression Therapy</h3>
+                <p>Improves circulation and speeds recovery with targeted pressure.</p>
+            </div>
+            <div class="equipment-item">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=640" alt="Electrical Stimulation">
+                <h3>ESM Therapy</h3>
+                <p>Electrical Muscle Stimulation reduces pain and promotes healing.</p>
+            </div>
+            <div class="equipment-item">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=640" alt="Red Light Cold Fusion">
+                <h3>Red Light Cold Fusion</h3>
+                <p>Cellular healing at the deepest level for tissue repair.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Doctor Section -->
+<section class="about-doctor">
+    <div class="container">
+        <div class="about-doctor-content">
+            <div>
+                <h2>Meet Dr. Debra Asakura</h2>
+                <p>For over 30 years, I've watched patients struggle with chronic pain, fatigue, and health issues that traditional medicine couldn't solve. They'd see specialist after specialist, take medication after medication, but never get to the root of their problems.</p>
+                <p>That's why I developed my Functional Wellness approach. It's not just about adjusting your spine—it's about understanding how your entire body works together.</p>
+                <p>When you come to my practice, we don't just treat your symptoms. We investigate your nutrition, analyze your movement patterns, assess your stress levels, and use cutting-edge technology to give your body what it needs to heal itself.</p>
+                <div class="credentials">
+                    <h3>Credentials & Experience</h3>
+                    <ul>
+                        <li>Doctor of Chiropractic - 30+ Years Experience</li>
+                        <li>Functional Medicine Certified</li>
+                        <li>Advanced Training in Neuromuscular Therapy</li>
+                        <li>Certified in Shockwave & Red Light Therapy</li>
+                        <li>Over 10,000 Patients Treated Successfully</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="dr-asakura.png" alt="Dr. Debra Asakura" style="border-radius: 10px; max-width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process">
+    <div class="container">
+        <h2>Your Journey to Wellness</h2>
+        <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 50px; color: #555;">Our proven 4-step process gets to the root of your health issues and creates lasting results.</p>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Comprehensive Assessment</h3>
+                <p>We start with a deep dive into your health history, current symptoms, lifestyle factors, and goals. This isn't a 10-minute rushed visit—we take the time to understand YOU.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Root Cause Analysis</h3>
+                <p>Using advanced diagnostic tools and functional testing, we identify the underlying causes of your symptoms—not just mask them with temporary fixes.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Customized Treatment Plan</h3>
+                <p>Your personalized plan combines chiropractic care, advanced technology, nutrition guidance, and lifestyle modifications tailored specifically to your needs.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Ongoing Support & Optimization</h3>
+                <p>We monitor your progress, adjust your plan as needed, and provide continuous support to ensure you achieve and maintain optimal health.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <h2>What Our Patients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <p class="quote">"After years of chronic back pain and countless doctors, Dr. Asakura was the first to actually listen and find the root cause. The combination of adjustments and red light therapy has given me my life back. I can finally play with my grandkids again!"</p>
+                <p class="author">— Margaret T., Age 62</p>
+            </div>
+            <div class="testimonial-item">
+                <p class="quote">"I was skeptical about 'functional wellness' but desperate for help with my migraines. Dr. Asakura discovered they were caused by neck tension and poor posture. Three months later, my migraines are 90% gone. This approach really works."</p>
+                <p class="author">— James R., Age 45</p>
+            </div>
+            <div class="testimonial-item">
+                <p class="quote">"As an athlete, I need to stay in peak condition. The shockwave therapy and decompression treatments have cut my recovery time in half. Dr. Asakura understands that performance isn't just about fixing injuries—it's about preventing them."</p>
+                <p class="author">— Sarah K., Age 34</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h3>What makes Functional Wellness different from regular chiropractic care?</h3>
+            <p>Traditional chiropractic focuses primarily on spinal adjustments. Functional Wellness looks at your entire body system—nutrition, movement, stress, sleep, and more. We use advanced technology and comprehensive testing to find the root cause of your issues, not just treat symptoms.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>How long does a typical treatment plan last?</h3>
+            <p>Every patient is different, but most people see significant improvement within 4-6 weeks. During your initial consultation, we'll discuss your specific situation and create a timeline tailored to your goals and condition severity.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Do you accept insurance?</h3>
+            <p>We accept most major insurance plans for chiropractic care. However, some of our advanced functional wellness services may not be covered. We'll provide a detailed cost breakdown during your consultation and work with you to maximize your benefits.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>What should I expect during my first visit?</h3>
+            <p>Your initial consultation includes a comprehensive health history review, physical examination, and discussion of your goals. We'll use this information to create your personalized treatment plan. The visit typically lasts 45-60 minutes—much longer than a standard doctor's appointment.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h3>Is this approach safe for seniors or people with chronic conditions?</h3>
+            <p>Absolutely. Our treatments are gentle and customized to each patient's needs and limitations. We've successfully helped patients from age 18 to 85, including those with arthritis, osteoporosis, and other chronic conditions. Safety and comfort are our top priorities.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Offer Section -->
+<section class="offer" id="offer">
+    <div class="container">
+        <h2>Start Your Journey to Total Wellness Today</h2>
+        <div class="offer-box">
+            <p style="font-size: 1.3em;">Initial Functional Wellness Consultation</p>
+            <div class="price"><span>$</span>49</div>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Regular Price: $200</p>
+            <a href="#" class="cta-button" style="background: #ffd700; color: #333;">Claim Your $49 Consultation Now</a>
+            
+            <div class="guarantee">
+                <h3>🛡️ 100% Satisfaction Guarantee</h3>
+                <p>If you're not completely satisfied with your consultation, we'll refund your $49. No questions asked.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        <p>Functional Wellness | Chiropractic Care | Advanced Technology</p>
+    </div>
+</footer>
+
+</body>
+</html>

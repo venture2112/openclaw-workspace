@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Skye Lounge",
+    "name": "Skye Lounge",
+    "category": "Wellness center",
+    "address": "5671 Palmer Way Suite G",
+    "city": "Carlsbad",
+    "state": "CA",
+    "phone": "(760) 428-1966",
+    "website": "skyelounge.com",
+    "email": "support@skyelounge.com",
+    "score": "Hot"
+  },
+  {
+    "title": "New U Rejuvenation Center",
+    "name": "New U Rejuvenation Center",
+    "category": "Medical spa",
+    "address": "1645 S Rancho Santa Fe Rd #104",
+    "city": "San Marcos",
+    "state": "CA",
+    "phone": "(760) 305-7255",
+    "website": "newurejuvenation.com",
+    "email": "",
+    "score": "Hot"
+  },
+  {
+    "title": "The Spa at La Costa",
+    "name": "The Spa at La Costa",
+    "category": "Spa (Omni Hotel)",
+    "address": "2104 Costa Del Mar Rd",
+    "city": "Carlsbad",
+    "state": "CA",
+    "phone": "(760) 438-9111",
+    "website": "omnihotels.com",
+    "email": "sonya.cook@omnihotels.com",
+    "score": "Warm"
+  }
+]

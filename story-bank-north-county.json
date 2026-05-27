@@ -1,0 +1,222 @@
+{
+  "publication": "North County Shoutouts",
+  "lastUpdated": "2026-05-23",
+  "stories": {
+    "vista": [
+      {
+        "id": "vista-001",
+        "headline": "Vista Public Works Week Open House Features Vehicle Showcase",
+        "source": "https://www.thevistapress.com/city-of-vista-news-headlines-20/",
+        "summary": "The Public Works Department invites the community to a FREE open house featuring a vehicle and equipment showcase, and a meet-and-greet with Vista's Public Works staff during National Public Works Week.",
+        "localRelevance": "Vista residents can see the equipment that maintains their city infrastructure and meet the workers who keep things running.",
+        "suggestedKeyword": "Vista Public Works",
+        "wordCount": 600,
+        "used": false
+      },
+      {
+        "id": "vista-002",
+        "headline": "Fire Crews Halt Forward Spread of 3-Acre Vegetation Fire in Vista",
+        "source": "https://www.cbs8.com/article/news/local/wildfire/fire-crews-battle-vegetation-fire-in-vista/509-aa6b5cdb-be10-45e9-a8ad-0fcc4562255d",
+        "summary": "Fire crews stopped the forward rate of spread on a vegetation fire in Vista on May 7, 2026. The three-acre fire in the 2900 block of Fairview Drive prompted road closures.",
+        "localRelevance": "High fire season awareness for Vista residents and emergency response coverage.",
+        "suggestedKeyword": "Vista fire safety",
+        "wordCount": 500,
+        "used": false
+      },
+      {
+        "id": "vista-003",
+        "headline": "37 Vista Students Recognized as Rising Stars of the Year",
+        "source": "https://www.thevistapress.com/velocity-news-159/",
+        "summary": "37 students were recognized at the Rising Star awards ceremony on May 11, 2026, celebrating academic achievement and community involvement.",
+        "localRelevance": "Positive youth stories and education coverage for Vista families.",
+        "suggestedKeyword": "Vista education",
+        "wordCount": 550,
+        "used": false
+      },
+      {
+        "id": "vista-004",
+        "headline": "Vista DUI Checkpoint Results Released from May 9 Operation",
+        "source": "https://www.sdsheriff.gov/bureaus/media-relations/news-release",
+        "summary": "San Diego County Sheriff's Department conducted a DUI checkpoint in Vista on May 9, 2026 as part of ongoing traffic safety enforcement.",
+        "localRelevance": "Public safety and law enforcement activity in Vista.",
+        "suggestedKeyword": "Vista public safety",
+        "wordCount": 450,
+        "used": false
+      },
+      {
+        "id": "vista-005",
+        "headline": "New Cugini's Italian Kitchen Opens at Former New Hope Star Diner Location",
+        "source": "https://vista.today/2026/04/cuginis-italian-kitchen-opening/",
+        "summary": "A new Sicilian restaurant, Cugini's Italian Kitchen, has opened at the former New Hope Star Diner location, offering authentic Italian menu options.",
+        "localRelevance": "New business opening and dining options for Vista residents.",
+        "suggestedKeyword": "Vista restaurants",
+        "wordCount": 600,
+        "used": false
+      },
+      {
+        "id": "vista-006",
+        "headline": "Vista City Council to Hold Public Meeting on Zone Change Proposal",
+        "source": "https://www.thevistapress.com/south-vista-communities-may-26-newsletter/",
+        "summary": "City Council will hold a public meeting on May 26, 2026 at 5:30 PM to discuss a proposal for a Zone Change affecting approximately 3 acres on the west side of La Tortuga.",
+        "localRelevance": "Local development and zoning decisions affecting Vista neighborhoods.",
+        "suggestedKeyword": "Vista development",
+        "wordCount": 650,
+        "used": false
+      },
+      {
+        "id": "vista-007",
+        "headline": "Vista Fire Reported in Orange County on May 9",
+        "source": "https://www.fresnobee.com/news/california/fires/article315699145.html",
+        "summary": "A wildfire named Vista Fire was reported on May 9, 2026 at 3:13 p.m. burning on private land in Orange County. Containment status and cause remain under investigation.",
+        "localRelevance": "Regional fire news with similar name - verify if this affects Vista, CA or is separate incident.",
+        "suggestedKeyword": "California wildfires",
+        "wordCount": 400,
+        "used": false
+      }
+    ],
+    "escondido": [
+      {
+        "id": "escondido-001",
+        "headline": "Escondido Celebrates 30th Annual Street Festival on Grand Avenue",
+        "source": "https://www.kpbs.org/events/2026/05/17/escondido-celebrates-30th-annual-street-festival",
+        "summary": "The Escondido Downtown Business Association hosted the 30th annual Escondido Street Festival on May 17, 2026, filling Grand Avenue with music, artisans, and community fun from 10 a.m. to 6 p.m.",
+        "localRelevance": "Major annual community event showcasing Escondido's downtown culture and local businesses.",
+        "suggestedKeyword": "Escondido events",
+        "wordCount": 700,
+        "used": false
+      },
+      {
+        "id": "escondido-002",
+        "headline": "69-Year-Old Army Veteran Assaulted Near Escondido 'Trump House' in Critical Condition",
+        "source": "https://fox5sandiego.com/news/local-news/escondido/army-veteran-assaulted-escondido/",
+        "summary": "A 69-year-old Escondido man and Army veteran is in critical condition after being attacked outside his home near a property locally known as the 'Trump House' on Wednesday afternoon.",
+        "localRelevance": "Crime and public safety story with community interest in the Midway-East neighborhood.",
+        "suggestedKeyword": "Escondido crime",
+        "wordCount": 600,
+        "used": false
+      },
+      {
+        "id": "escondido-003",
+        "headline": "Mountain Lion Spotted Near Escondido Homes, Tranquilized by Authorities",
+        "source": "https://fox5sandiego.com/news/local-news/escondido/mountain-lion-escondido-sighting/",
+        "summary": "A mountain lion was reported near a residential neighborhood in Escondido on May 4, 2026, prompting response from local police and California Department of Fish and Wildlife who tranquilized the animal.",
+        "localRelevance": "Wildlife and public safety in Escondido residential areas.",
+        "suggestedKeyword": "Escondido wildlife",
+        "wordCount": 550,
+        "used": false
+      },
+      {
+        "id": "escondido-004",
+        "headline": "Birch Aquarium Celebrates First-Ever Settlement of Red Octopuses",
+        "source": "https://patch.com/california/escondido",
+        "summary": "Birch Aquarium has achieved a major milestone with the first-ever successful settlement of red octopuses, a significant development for marine research.",
+        "localRelevance": "Positive science and education news from a major Escondido-area attraction.",
+        "suggestedKeyword": "Birch Aquarium",
+        "wordCount": 650,
+        "used": false
+      },
+      {
+        "id": "escondido-005",
+        "headline": "New Public Art Installation Coming to Escondido's Kit Carson Park",
+        "source": "https://www.sdfoundation.org/news-events/sdf-news/new-public-art-to-inspire-connection-at-escondidos-kit-carson-park/",
+        "summary": "Threshold Five, funded by private donations to Escondido Community Foundation, will expand access to interactive, community-centered art at Kit Carson Park.",
+        "localRelevance": "Arts and culture development in Escondido public spaces.",
+        "suggestedKeyword": "Escondido art",
+        "wordCount": 600,
+        "used": false
+      },
+      {
+        "id": "escondido-006",
+        "headline": "Barley & Sword Brewing Brings Medieval Combat to Grand Avenue",
+        "source": "https://www.times-advocate.com/articles/whats-up-downtown-april-30-2026/",
+        "summary": "The Escondido Street Festival featured local beer from the new Barley & Sword Brewing at 800 West Grand Avenue, Escondido's newest tavern with medieval combat events.",
+        "localRelevance": "New business spotlight on unique veteran-owned brewery with knight fights.",
+        "suggestedKeyword": "Barley & Sword Escondido",
+        "wordCount": 700,
+        "used": false
+      },
+      {
+        "id": "escondido-007",
+        "headline": "Fatal Crash Sparks Vegetation Fire in North Escondido",
+        "source": "https://fox5sandiego.com/news/local-news/escondido/escondido-vehicle-fire-vegetation-blaze/",
+        "summary": "Crews responded to a vegetation fire in North County after flames from a vehicle fire spread into nearby brush on a Saturday in Escondido.",
+        "localRelevance": "Traffic safety and fire risk during dry season in Escondido area.",
+        "suggestedKeyword": "Escondido traffic safety",
+        "wordCount": 500,
+        "used": false
+      }
+    ],
+    "san-marcos": [
+      {
+        "id": "sanmarcos-001",
+        "headline": "CSU San Marcos Tops Out New Integrated Science & Engineering Building",
+        "source": "https://www.californiaconstructionnews.com/2026/05/18/c-w-driver-tops-out-integrated-science-engineering-building-at-california-state-university-san-marcos/",
+        "summary": "C.W. Driver Companies has topped out the Integrated Science & Engineering Building at California State University San Marcos, marking a key milestone on the 70,000-square-foot facility.",
+        "localRelevance": "Major education infrastructure development benefiting San Marcos and North County students.",
+        "suggestedKeyword": "CSU San Marcos",
+        "wordCount": 700,
+        "used": false
+      },
+      {
+        "id": "sanmarcos-002",
+        "headline": "San Marcos Plans 260 Affordable Housing Units in Creek Area",
+        "source": "https://thecoastnews.com/san-marcos-affirmed-housing-plan-260-affordable-units-in-creek-area/",
+        "summary": "The City of San Marcos and Affirmed Housing are planning 260 affordable housing units in the creek area, with detailed designs and financing plan to be submitted during the agreement period.",
+        "localRelevance": "Housing affordability crisis response and new development in San Marcos.",
+        "suggestedKeyword": "San Marcos housing",
+        "wordCount": 750,
+        "used": false
+      },
+      {
+        "id": "sanmarcos-003",
+        "headline": "San Marcos Gun Safety Event Sees Return of Over 250 Firearms",
+        "source": "https://www.northcoastcurrent.com/carlsbad/2026/04/san-marcos-gun-safety-event-sees-return-of-over-250-firearms/",
+        "summary": "More than 250 firearms were turned in during a gun safety event held April 18 at the San Marcos Sheriff's Station, promoting community safety.",
+        "localRelevance": "Public safety initiative and community participation in San Marcos.",
+        "suggestedKeyword": "San Marcos public safety",
+        "wordCount": 550,
+        "used": false
+      },
+      {
+        "id": "sanmarcos-004",
+        "headline": "San Marcos Swim Team Completes Undefeated Dual Meet Season",
+        "source": "https://keyt.com/news/top-stories/2026/04/24/san-marcos-swim-completes-undefeated-dual-meet-season/",
+        "summary": "The San Marcos High School swim team celebrated Senior Day with a sweep over Camarillo, with the girls winning 136-40 and the boys defeating the Scorpions 97-79 to complete an undefeated season.",
+        "localRelevance": "Local sports achievement and high school athletics coverage.",
+        "suggestedKeyword": "San Marcos sports",
+        "wordCount": 600,
+        "used": false
+      },
+      {
+        "id": "sanmarcos-005",
+        "headline": "Honor Flight San Diego Provides Memories for Veterans at San Marcos Event",
+        "source": "https://www.thevistapress.com/whats-happening-in-san-marcos-this-week/",
+        "summary": "Honor Flight San Diego once again provided memories for veterans at a San Marcos Chamber of Commerce event on May 12, 2026, honoring local military service members.",
+        "localRelevance": "Veterans community support and recognition in San Marcos.",
+        "suggestedKeyword": "San Marcos veterans",
+        "wordCount": 650,
+        "used": false
+      },
+      {
+        "id": "sanmarcos-006",
+        "headline": "Cal State San Marcos Graduates Class of 2026",
+        "source": "https://www.sandiegouniontribune.com/2026/05/16/photos-graduates-of-cal-state-san-marcos/",
+        "summary": "California State University San Marcos held commencement ceremonies on May 16, 2026, celebrating graduates with multiple ceremonies over the weekend.",
+        "localRelevance": "Education milestone and local university impact on San Marcos community.",
+        "suggestedKeyword": "CSUSM graduation",
+        "wordCount": 600,
+        "used": false
+      },
+      {
+        "id": "sanmarcos-007",
+        "headline": "San Marcos Median Home Price Reaches $925,000 in March 2026",
+        "source": "https://cristineclark.com/blog/san-marcos-condos-and-townhomes-near-csusm-explained",
+        "summary": "San Marcos housing market data shows the overall median sale price reached $925,000 in March 2026, with attached homes generally sitting below the city's overall median.",
+        "localRelevance": "Real estate market trends and housing affordability in San Marcos.",
+        "suggestedKeyword": "San Marcos real estate",
+        "wordCount": 700,
+        "used": false
+      }
+    ]
+  }
+}

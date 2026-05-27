@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Streaming Opportunity",
+  "type": "object",
+  "required": ["id", "platform", "source_url", "content", "intent_score", "created_at"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this opportunity"
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["reddit", "quora", "youtube", "discord", "forum", "other"],
+      "description": "Source platform"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Direct link to the conversation"
+    },
+    "author": {
+      "type": "string",
+      "description": "Username of the person posting"
+    },
+    "content": {
+      "type": "string",
+      "description": "The post/comment text"
+    },
+    "title": {
+      "type": "string",
+      "description": "Post title (if applicable)"
+    },
+    "subreddit": {
+      "type": "string",
+      "description": "Subreddit name (Reddit only)"
+    },
+    "intent_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "1-10 score indicating purchase intent"
+    },
+    "score_reason": {
+      "type": "string",
+      "description": "Explanation of why this score was assigned"
+    },
+    "keywords_matched": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Keywords that triggered this opportunity"
+    },
+    "topics": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Identified topics (cord_cutting, sports_streaming, pricing, etc.)"
+    },
+    "drafted_response": {
+      "type": "string",
+      "description": "AI-drafted response for human review"
+    },
+    "response_tone": {
+      "type": "string",
+      "enum": ["casual", "informative", "empathetic", "helpful"],
+      "description": "Tone of the drafted response"
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Potential risks (brand_complaint, legal, spammy_context, etc.)"
+    },
+    "recommended_action": {
+      "type": "string",
+      "enum": ["engage", "monitor", "avoid"],
+      "description": "Recommended action"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "approved", "rejected", "posted", "follow_up"],
+      "description": "Current status of this opportunity"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the post was created"
+    },
+    "discovered_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When we found this opportunity"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Human reviewer notes"
+    }
+  }
+}

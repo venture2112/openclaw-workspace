@@ -1,0 +1,11 @@
+{
+  "settings": {
+    "showTopBar": true,
+    "showFooter": true,
+    "showFooterSection": true,
+    "showDate": false,
+    "showLogo": true,
+    "defaultColor": "",
+    "showSubjectAndPreHeader": false
+  }
+}

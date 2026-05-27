@@ -1,0 +1,45 @@
+{
+  "topic": "Positive local news from Vista, San Marcos, and Escondido California",
+  "sources": [
+    "brave_search",
+    "google_news",
+    "chamber_of_commerce",
+    "business_journal",
+    "local_news_outlets",
+    "civic_organizations"
+  ],
+  "count": 6,
+  "locations": ["Vista California", "San Marcos California", "Escondido California"],
+  "articles_per_location": 2,
+  "controlboard_workspace_id": "",
+  "letterman_publication_id": "",
+  "cron_jobs": {
+    "morning_search": "0 9 * * *",
+    "evening_search": "0 20 * * *"
+  },
+ "unsplash_client_id": "",
+  "source_queries": {
+    "major_news": [
+      "NBC San Diego Vista",
+      "ABC 10 News San Marcos",
+      "CBS 8 Escondido",
+      "FOX 5 San Diego North County",
+      "KPBS North County",
+      "San Diego Union Tribune North County"
+    ],
+    "chamber_business": [
+      "Vista Chamber of Commerce news",
+      "San Marcos Chamber of Commerce",
+      "Escondido Chamber of Commerce",
+      "San Diego Business Journal North County",
+      "North San Diego Business Chamber"
+    ],
+    "civic_community": [
+      "Vista city news",
+      "San Marcos city updates",
+      "Escondido city news",
+      "North County community events",
+      "San Diego County North County news"
+    ]
+  }
+}

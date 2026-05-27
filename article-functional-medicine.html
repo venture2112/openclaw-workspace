@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Functional Medicine | Dr. Debra Asakura</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fff;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 70px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4e4bc;
+        }
+        
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+            color: white;
+        }
+        .article-category {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .article-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .article-meta {
+            opacity: 0.8;
+            font-size: 0.95em;
+        }
+        
+        /* Article Content */
+        .article-content {
+            padding: 60px 0;
+            background: white;
+        }
+        .article-content h2 {
+            font-size: 1.8em;
+            color: #1a1a1a;
+            margin: 40px 0 20px;
+        }
+        .article-content h3 {
+            font-size: 1.4em;
+            color: #7c9a6d;
+            margin: 30px 0 15px;
+        }
+        .article-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05em;
+        }
+        .article-content ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .article-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            color: #555;
+        }
+        .article-content strong {
+            color: #1a1a1a;
+        }
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: #d4af37;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            background: #b8962e;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .footer-brand p {
+            color: #a0aec0;
+            line-height: 1.8;
+        }
+        .footer-links h4 {
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        .footer-links a {
+            display: block;
+            color: #a0aec0;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #d4af37;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            color: #666;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.8em;
+            }
+            .nav-links {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><a href="index.html"><img src="logo.png" alt="Asakura Beyond Chiropractic"></a></div>
+                <nav class="nav-links">
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="article-header">
+        <div class="container">
+            <span class="article-category">Holistic Health</span>
+            <h1>Understanding Functional Medicine: Treating Root Causes, Not Just Symptoms</h1>
+            <p class="article-meta">By Dr. Debra Asakura | 9 min read</p>
+        </div>
+    </section>
+    
+    <section class="article-content">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1200" alt="Holistic health and wellness" class="article-image">
+            
+            <p>You've experienced it: the doctor's appointment that lasts ten minutes, ends with a prescription, and leaves you wondering if anyone actually understood why you're unwell. Conventional medicine excels at acute care—treating infections, performing surgery, managing emergencies—but often struggles with chronic conditions that don't fit neatly into diagnostic categories or respond to standard treatments. Functional medicine offers a different paradigm, one that asks not "What disease do you have?" but "Why has your body lost function?"</p>
+            
+            <h2>The Limitations of the Conventional Model</h2>
+            
+            <p>Traditional medicine operates primarily through a disease-centered model. Patients present with symptoms, receive diagnostic tests, and are assigned a diagnosis based on established criteria. Treatment follows standardized protocols for that diagnosis. This approach saves countless lives and manages many conditions effectively, but it has significant limitations when dealing with chronic, complex, or subclinical conditions.</p>
+            
+            <p>The problem is that symptoms are not diseases—they're signals. A headache isn't an aspirin deficiency. Fatigue isn't a stimulant deficiency. Depression isn't fundamentally a Prozac deficiency. Yet the conventional model often treats them as such, managing symptoms without addressing the underlying dysfunction causing them. The result? Temporary relief at best, and a progression of underlying disease processes at worst.</p>
+            
+            <h2>The Functional Medicine Approach</h2>
+            
+            <p>Functional medicine is systems biology applied to healthcare. It recognizes that the body is an interconnected web of systems—digestive, immune, endocrine, neurological, detoxification—and that dysfunction in one area inevitably affects others. Rather than dividing the body into isolated organ systems treated by separate specialists, functional medicine practitioners look for patterns of dysfunction that explain the whole picture.</p>
+            
+            <p>The core principles of functional medicine include:</p>
+            
+            <ul>
+                <li><strong>Individuality:</strong> Each person has a unique genetic makeup, biochemical profile, and life history. What works for one person may not work for another.</li>
+                <li><strong>Patient-centered care:</strong> The patient is an active partner in their healing process, not a passive recipient of treatment.</li>
+                <li><strong>Systems biology:</strong> Understanding how all body systems interconnect and influence each other.</li>
+                <li><strong>Root cause resolution:</strong> Identifying and addressing the underlying factors causing symptoms, not just suppressing the symptoms themselves.</li>
+                <li><strong>Health as vitality:</strong> Health isn't merely the absence of disease but optimal function and resilience.</li>
+            </ul>
+            
+            <h2>The Web of Causation</h2>
+            
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200" alt="Health analysis and testing" class="article-image">
+            
+            <p>Functional medicine practitioners investigate the complex web of factors that contribute to dysfunction. These typically fall into several categories:</p>
+            
+            <h3>Antecedents</h3>
+            <p>These are predisposing factors—genetics, family history, constitutional tendencies—that create vulnerability to dysfunction. You can't change your genes, but understanding genetic predispositions allows you to modify environmental factors to prevent expression of those tendencies.</p>
+            
+            <h3>Triggers</h3>
+            <p>Triggers are events or exposures that initiate a disease process: infections, physical trauma, severe stress, toxic exposures, or major life changes. Identifying triggers helps understand when and why a condition began.</p>
+            
+            <h3>Mediators</h3>
+            <p>Mediators are ongoing factors that perpetuate dysfunction: poor diet, chronic stress, sleep deprivation, sedentary lifestyle, hidden infections, or continued toxic exposures. These are often the most important targets for intervention.</p>
+            
+            <h2>Advanced Assessment Tools</h2>
+            
+            <p>Functional medicine employs testing that goes beyond standard blood work to reveal subtle imbalances:</p>
+            
+            <ul>
+                <li><strong>Comprehensive nutritional analysis:</strong> Evaluating levels of vitamins, minerals, amino acids, and fatty acids to identify deficiencies and imbalances</li>
+                <li><strong>Hormone testing:</strong> Measuring not just total hormone levels but free hormones and metabolites to understand actual hormonal activity</li>
+                <li><strong>Gut microbiome analysis:</strong> Assessing the trillions of bacteria in your digestive tract that influence everything from immunity to mental health</li>
+                <li><strong>Food sensitivity testing:</strong> Identifying immune reactions to foods that may be causing chronic inflammation</li>
+                <li><strong>Detoxification profiles:</strong> Evaluating how efficiently your body processes and eliminates toxins</li>
+                <li><strong>Organic acids testing:</strong> Revealing metabolic byproducts that indicate mitochondrial function, neurotransmitter activity, and gut health</li>
+                <li><strong>Advanced lipid panels:</strong> Going beyond total cholesterol to assess particle size, inflammatory markers, and other cardiovascular risk factors</li>
+            </ul>
+            
+            <h2>The Therapeutic Partnership</h2>
+            
+            <p>Perhaps the most distinctive aspect of functional medicine is the relationship between practitioner and patient. Initial consultations often last 60-90 minutes, allowing time for a comprehensive history that explores not just current symptoms but lifelong health patterns, environmental exposures, stress levels, relationships, and life circumstances.</p>
+            
+            <p>This detailed history often reveals connections that shorter visits miss. The patient with chronic digestive issues who also has a history of frequent antibiotic use as a child. The woman with autoimmune disease whose symptoms began after a severe emotional trauma. The executive with "adrenal fatigue" who's been surviving on six hours of sleep and excessive caffeine for years. These stories matter because they point toward root causes.</p>
+            
+            <h2>Treatment Modalities</h2>
+            
+            <p>Functional medicine treatment plans are highly individualized but typically emphasize:</p>
+            
+            <ul>
+                <li><strong>Nutritional intervention:</strong> Using food as medicine through therapeutic diets, elimination protocols, and targeted supplementation</li>
+                <li><strong>Lifestyle modification:</strong> Addressing sleep, movement, stress management, and relationships as fundamental health foundations</li>
+                <li><strong>Stress reduction:</strong> Recognizing that chronic stress undermines virtually every physiological system</li>
+                <li><strong>Detoxification support:</strong> Helping the body eliminate accumulated toxins through dietary, supplemental, and lifestyle interventions</li>
+                <li><strong>Gut healing:</strong> Addressing the gastrointestinal system as a central hub of immune function and systemic health</li>
+                <li><strong>Hormone balancing:</strong> Supporting endocrine function through natural interventions when possible</li>
+            </ul>
+            
+            <h2>When Functional Medicine Makes Sense</h2>
+            
+            <p>Functional medicine is particularly valuable for:</p>
+            
+            <ul>
+                <li>Chronic conditions that haven't responded to conventional treatment</li>
+                <li>Autoimmune diseases</li>
+                <li>Digestive disorders (IBS, IBD, SIBO, leaky gut)</li>
+                <li>Hormonal imbalances</li>
+                <li>Chronic fatigue and fibromyalgia</li>
+                <li>Mental health conditions with physical components</li>
+                <li>Metabolic syndrome and diabetes</li>
+                <li>Cardiovascular disease prevention</li>
+                <li>Anyone seeking optimal wellness rather than just disease management</li>
+            </ul>
+            
+            <h2>An Integrated Future</h2>
+            
+            <p>Functional medicine doesn't reject conventional medicine—it expands upon it. There's immense value in pharmaceutical interventions when appropriate, surgical procedures when necessary, and emergency care when life-threatening. The goal is integration: using the best of all approaches to support the body's innate healing capacity.</p>
+            
+            <p>As healthcare costs rise and chronic disease burdens grow, functional medicine's focus on prevention, root cause resolution, and patient empowerment becomes increasingly relevant. By understanding why dysfunction occurs and addressing those causes, we can move beyond symptom management to genuine healing and optimal vitality.</p>
+            
+            <a href="articles.html" class="back-link">← Back to Articles</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Asakura Beyond Chiropractic">
+                    <p>Healing your body and reclaiming your life through functional wellness and advanced therapeutic technologies.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="articles.html">Articles</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="services.html">Chiropractic Care</a>
+                    <a href="services.html">Functional Wellness</a>
+                    <a href="services.html">BrainHealthPlus</a>
+                    <a href="services.html">Laser Therapy</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <a href="tel:760-419-0002">(760) 419-0002</a>
+                    <p style="color: #a0aec0; margin-top: 10px;">1645 S Rancho Santa Fe Rd, Ste 104<br>San Marcos, CA 92078</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dr. Debra Asakura. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

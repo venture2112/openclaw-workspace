@@ -1,0 +1,43 @@
+id: memory-bank
+name: Memory Bank
+version: 1.0.0
+author: "Pacino / Titanium Software"
+description: >
+  Build persistent knowledge banks from PDFs, transcripts, URLs, or pasted text.
+  Creates/updates an append-only knowledge-base.md and index.md per bank.
+  Workshop mode auto-generates a recap with summary + action steps.
+entrypoint: SKILL.md
+
+commands:
+  - trigger: "/memory bank"
+    description: "Ingest a source into a knowledge bank (new or existing)."
+  - trigger: "/memory bank workshop"
+    description: "Same as /memory bank, but auto-generates summary + action steps (workshop mode)."
+
+requirements:
+  tools:
+    - web_fetch
+    - read
+    - write
+    - pdf
+
+capabilities:
+  ingestion_methods:
+    - paste_text
+    - share_link
+    - vps_file_path
+  not_supported:
+    - telegram_document_attachments
+
+storage:
+  root: "memory/banks/{bank_name}/"
+  artifacts:
+    - "knowledge-base.md"
+    - "index.md"
+    - "sources/"
+    - "recaps/"
+
+notes:
+  - "Telegram document attachments are not auto-downloaded; use paste/link/VPS path."
+  - "Google Slides/PPTX exports often return placeholder notes; export decks to PDF first."
+  - "Never overwrite knowledge-base.md or index.md; append-only."

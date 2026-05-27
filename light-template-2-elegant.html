@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Debra Asakura | Functional Wellness Center</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Clean Header */
+        header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Elegant Hero */
+        .hero {
+            padding: 120px 0 100px;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            text-align: center;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 3.2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            color: #667eea;
+        }
+        .hero p {
+            font-size: 1.25em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 50px 0;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.15em;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        .btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .problem h2 {
+            text-align: center;
+            font-size: 2.3em;
+            color: #2c3e50;
+            margin-bottom: 50px;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .problem-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid #ff6b6b;
+        }
+        .problem-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .problem-card h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .problem-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #fff 100%);
+        }
+        .solution-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .solution h2 {
+            font-size: 2.3em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .solution p {
+            color: #666;
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .solution-item {
+            display: flex;
+            gap: 25px;
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .solution-number {
+            width: 50px;
+            height: 50px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+        .solution-content h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .solution-content p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Technology Section */
+        .technology {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .technology h2 {
+            text-align: center;
+            font-size: 2.3em;
+            color: #2c3e50;
+            margin-bottom: 60px;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        .tech-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .tech-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        .tech-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tech-content {
+            padding: 25px;
+        }
+        .tech-content h3 {
+            font-size: 1.15em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .tech-content p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea08 0%, #764ba208 100%);
+        }
+        .process h2 {
+            text-align: center;
+            font-size: 2.3em;
+            color: #2c3e50;
+            margin-bottom: 60px;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: #667eea30;
+        }
+        .process-step {
+            text-align: center;
+            width: 22%;
+            position: relative;
+            z-index: 1;
+        }
+        .step-circle {
+            width: 70px;
+            height: 70px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            border: 5px solid #fff;
+        }
+        .process-step h3 {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .process-step p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.3em;
+            color: #2c3e50;
+            margin-bottom: 60px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 15px;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4em;
+            color: #667eea30;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        .testimonial-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        .price-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 450px;
+            margin: 40px auto;
+        }
+        .price {
+            font-size: 4em;
+            font-weight: 700;
+        }
+        .price span {
+            font-size: 0.5em;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-left: 15px;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 20px 60px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        footer p {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Dr. Debra Asakura</div>
+                <nav class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#technology">Technology</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="badge">Functional Wellness & Chiropractic</div>
+            <h1>Finally, a Doctor Who Looks at Your<br><span>Whole Body</span></h1>
+            <p>Discover the root cause of your health challenges with Dr. Debra Asakura's 30+ years of experience in functional medicine and advanced therapeutic technologies.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Patients Helped</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Advanced Technologies</div>
+                </div>
+            </div>
+            <a href="#consultation" class="btn">Schedule Your $49 Consultation</a>
+        </div>
+    </section>
+    
+    <section class="problem">
+        <div class="container">
+            <h2>The Problem With Traditional Healthcare</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😫</div>
+                    <h3>Symptom Masking</h3>
+                    <p>Medications hide pain but never fix the underlying issue. The pain keeps returning, often worse than before.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⏱️</div>
+                    <h3>Rushed Visits</h3>
+                    <p>10-minute appointments barely scratch the surface. No time to understand your complete health picture.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🔄</div>
+                    <h3>One-Size-Fits-All</h3>
+                    <p>Cookie-cutter treatments ignore your unique body, lifestyle, and health history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="solution" id="about">
+        <div class="container">
+            <div class="solution-header">
+                <h2>Our Functional Wellness Approach</h2>
+                <p>We don't just treat symptoms—we find and address the root cause of your health challenges.</p>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-item">
+                    <div class="solution-number">1</div>
+                    <div class="solution-content">
+                        <h3>Comprehensive Assessment</h3>
+                        <p>We take the time to understand your complete health history, lifestyle, and goals. No rushed appointments.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-number">2</div>
+                    <div class="solution-content">
+                        <h3>Root Cause Analysis</h3>
+                        <p>Using advanced diagnostics, we identify WHY you're experiencing symptoms, not just what they are.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-number">3</div>
+                    <div class="solution-content">
+                        <h3>Personalized Treatment</h3>
+                        <p>Your plan combines chiropractic care with advanced technologies tailored specifically to your needs.</p>
+                    </div>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-number">4</div>
+                    <div class="solution-content">
+                        <h3>Ongoing Support</h3>
+                        <p>We monitor your progress and adjust your plan as needed, ensuring lasting results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="technology" id="technology">
+        <div class="container">
+            <h2>Advanced Therapeutic Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-image">
+                        <img src="https://pixabay.com/get/g0236c803cebf7ddedbfc516b4ea0317b1ce6ee03a3a4804642d12c5f33da4818ce1bfac08293093cf967aa5d8e0fbd72_640.jpg" alt="Electrical Stimulation">
+                    </div>
+                    <div class="tech-content">
+                        <h3>Electrical Stimulation</h3>
+                        <p>Reduces pain and inflammation at the cellular level.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-image">
+                        <img src="https://pixabay.com/get/g343cc3220bfbd055bc94591fc7480fbb1100f7a97f4d302f9d3b86aa3f91b0a30574d721b0c490122a5d9dc292631a808fe945c68f36c1f5693008685754cd38_640.jpg" alt="Compression Therapy">
+                    </div>
+                    <div class="tech-content">
+                        <h3>Compression Therapy</h3>
+                        <p>Improves circulation and speeds recovery.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-image">
+                        <img src="https://pixabay.com/get/g8c9f0764253d6be63b2a5ae993572fa5e8c6fd4233b31be83f6769485da5fa916caf447577f7e7c9cb72ee27bba7210e79ce322c0ed762c6d22dd8d0ceaf74ac_640.jpg" alt="Red Light Therapy">
+                    </div>
+                    <div class="tech-content">
+                        <h3>Red Light Therapy</h3>
+                        <p>Promotes deep tissue repair and healing.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-image">
+                        <img src="https://pixabay.com/get/g6884b1233062cbccd3c7feedf3b6b9e005d62323437e1a16eddd239306e28c88aa864c5c66416f7a41d2b89333c69c22408622dfc932de48df05c8971e23e75c_640.jpg" alt="Shockwave Therapy">
+                    </div>
+                    <div class="tech-content">
+                        <h3>Shockwave Therapy</h3>
+                        <p>Breaks up scar tissue and stimulates regeneration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="process">
+        <div class="container">
+            <h2>Your Journey to Wellness</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-circle">1</div>
+                    <h3>Assessment</h3>
+                    <p>Comprehensive health evaluation</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">2</div>
+                    <h3>Analysis</h3>
+                    <p>Identify root causes</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">3</div>
+                    <h3>Treatment</h3>
+                    <p>Personalized care plan</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">4</div>
+                    <h3>Results</h3>
+                    <p>Lasting wellness achieved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>Patient Success Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>After years of chronic back pain, Dr. Asakura was the first to actually listen and find the root cause. I've got my life back!</p>
+                    <p class="author">— Margaret T., Age 62</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>I was skeptical but desperate for help with migraines. Three months later, my migraines are 90% gone. This really works.</p>
+                    <p class="author">— James R., Age 45</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>As an athlete, recovery is everything. The advanced therapies have cut my recovery time in half. Incredible!</p>
+                    <p class="author">— Sarah K., Age 34</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="consultation">
+        <div class="container">
+            <h2>Ready to Transform Your Health?</h2>
+            <p>Start with a comprehensive Functional Wellness Consultation</p>
+            <div class="price-tag">
+                <div class="price">$49 <span>$200</span></div>
+                <p style="margin-top: 15px; font-size: 1.1em;">Limited time offer — 75% off regular price</p>
+            </div>
+            <a href="#" class="btn-white">Schedule Your Consultation</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+            <p>Functional Wellness | Chiropractic Care | Advanced Technology</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Overpaying for Streaming</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero h1 span {
+            color: #ff8585;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+        .hero-subtitle {
+            font-size: 24px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        /* Video Placeholder */
+        .video-container {
+            max-width: 850px;
+            margin: 40px auto;
+            position: relative;
+        }
+        .video-placeholder {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .video-placeholder .play-btn {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.5);
+        }
+        .video-placeholder .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(233, 69, 96, 0.7);
+        }
+        .video-placeholder .play-btn::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 30px solid white;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            margin-left: 8px;
+        }
+        
+        /* Price Box */
+        .price-section {
+            margin: 50px 0;
+        }
+        .price-box {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            display: inline-block;
+            padding: 30px 60px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.5);
+        }
+        .price-box .price {
+            color: white;
+        }
+        .price-box .month {
+            color: white;
+            opacity: 0.9;
+        }
+        .price-box .price {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+        }
+        .price-box .month {
+            font-size: 20px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .savings {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #ffd700;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            padding: 22px 60px;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(233, 69, 96, 0.6);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .stats h2 {
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #1a1a2e;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+        .stat-item {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        .stat-item h3 {
+            font-size: 56px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .stat-item p {
+            font-size: 20px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #1a1a2e;
+        }
+        .feature-list {
+            list-style: none;
+        }
+        .feature-list li {
+            padding: 25px 0 25px 70px;
+            position: relative;
+            font-size: 22px;
+            border-bottom: 1px solid #eee;
+            font-weight: 500;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        /* Comparison Section */
+        .comparison {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .comparison h2 {
+            font-size: 42px;
+            margin-bottom: 60px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 700px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+        .comparison-box {
+            padding: 50px 30px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .comparison-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+        }
+        .comparison-box.cable {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .comparison-box.cable::before {
+            background: #ff6b6b;
+        }
+        .comparison-box.this {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border: none;
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.5);
+        }
+        .comparison-box.this::before {
+            background: white;
+        }
+        .comparison-box h3 {
+            font-size: 16px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .comparison-box .amount {
+            font-size: 48px;
+            font-weight: 800;
+        }
+        .vs {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: #1a1a2e;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            z-index: 10;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+        }
+        .final-cta h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .final-cta p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .final-cta .cta-button {
+            background: white;
+            color: #e94560;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .final-cta .cta-button:hover {
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero-subtitle { font-size: 18px; }
+            .price-box .price { font-size: 48px; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .comparison-box.this { transform: none; }
+            .vs { display: none; }
+            .stats h2, .features h2, .comparison h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">Save 50% on Streaming</div>
+            <h1>Stop Overpaying for <span>Streaming</span></h1>
+            <p class="hero-subtitle">Get 140,000+ movies, 20,000+ live TV channels, and 32,000+ TV series for less than half what you're paying now.</p>
+            
+            <div class="video-container">
+                <video controls style="width:100%; max-width:850px; border-radius:15px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);" poster="">
+                    <source src="https://www.dropbox.com/scl/fi/ikfduhrh3vv4nn157gyi8/sales-video.mp4?rlkey=unm4g3hj5i9fs9uwlcsqj0fkg&raw=1" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="price-section">
+                <div class="price-box">
+                    <div class="price">$49.95</div>
+                    <div class="month">per month</div>
+                </div>
+                <div class="savings">✓ Save over $600/year vs cable</div>
+            </div>
+            <br>
+            <a href="#" class="cta-button">Start Saving Today →</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <h2>What You Get</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>140,000+</h3>
+                <p>Movies & On-Demand</p>
+            </div>
+            <div class="stat-item">
+                <h3>20,000+</h3>
+                <p>Live TV Channels</p>
+            </div>
+            <div class="stat-item">
+                <h3>32,000+</h3>
+                <p>TV Series & Shows</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Everything Included</h2>
+        <ul class="feature-list">
+            <li>Live sports including NFL, NBA, MLB, NHL</li>
+            <li>100% licensed content you can trust</li>
+            <li>10-year track record of reliable service</li>
+            <li>One easy platform for all your entertainment</li>
+            <li>Works on all your devices</li>
+            <li>No contracts, cancel anytime</li>
+        </ul>
+    </section>
+
+    <section class="comparison">
+        <h2>The Math is Simple</h2>
+        <div class="comparison-grid" style="position: relative;">
+            <div class="comparison-box cable">
+                <h3>Cable + Netflix + Hulu</h3>
+                <div class="amount">$100+/mo</div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="comparison-box this">
+                <h3>This Service</h3>
+                <div class="amount">$49.95/mo</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2>Ready to Cut Your Bill in Half?</h2>
+        <p>Join thousands who've already made the switch.</p>
+        <a href="#" class="cta-button">Get Started Now →</a>
+    </section>
+</body>
+</html>

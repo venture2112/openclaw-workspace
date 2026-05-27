@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Debra Asakura | Functional Wellness Center</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 70px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        .nav-links a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #d4af37;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4e4bc;
+        }
+        
+        /* Hero with Photo */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            padding: 80px 0;
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            color: #667eea;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #d4af37;
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        /* About with Photo */
+        .about {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .about h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .about p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        /* Services with Photos */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 60px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-content {
+            padding: 30px;
+        }
+        .service-content h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .service-content p {
+            color: #666;
+        }
+        
+        /* Process with Photos */
+        .process {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .process h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 60px;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .process-step {
+            text-align: center;
+        }
+        .process-step img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .process-step h3 {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .process-step p {
+            color: #666;
+        }
+        
+        /* Testimonials with Photos */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 60px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .testimonial-card p {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            color: #7c9a6d;
+        }
+        
+        /* Results with Photos */
+        .results {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .results h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 60px;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .result-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        .result-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .result-content h3 {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .result-content p {
+            color: #666;
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn-white {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 20px 60px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><img src="logo.png" alt="Asakura Beyond Chiropractic"></div>
+                <nav class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#process">Process</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <h1>Heal Your Body.<br><span>Reclaim Your Life.</span></h1>
+                    <p>30+ years of functional wellness expertise. Discover the root cause of your health challenges with advanced therapeutic technologies.</p>
+                    <a href="#consultation" class="btn">Schedule $49 Consultation</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800" alt="Wellness Center">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800" alt="Dr. Debra Asakura">
+                </div>
+                <div>
+                    <h2>Meet Dr. Debra Asakura</h2>
+                    <p>For over 30 years, I've helped thousands of patients find lasting wellness through functional medicine and advanced therapeutic technologies.</p>
+                    <p>My approach combines traditional chiropractic care with cutting-edge treatments to address the root cause of your health challenges—not just mask symptoms.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600" alt="Consultation">
+                    <div class="service-content">
+                        <h3>Initial Consultation</h3>
+                        <p>Comprehensive health assessment and personalized treatment plan.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600" alt="Chiropractic">
+                    <div class="service-content">
+                        <h3>Chiropractic Care</h3>
+                        <p>Expert spinal adjustments to restore alignment and function.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600" alt="Therapy">
+                    <div class="service-content">
+                        <h3>Advanced Therapy</h3>
+                        <p>Red light, shockwave, and decompression therapies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="process" id="process">
+        <div class="container">
+            <h2>Your Journey to Wellness</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400" alt="Assessment">
+                    <h3>1. Assessment</h3>
+                    <p>Comprehensive evaluation</p>
+                </div>
+                <div class="process-step">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400" alt="Analysis">
+                    <h3>2. Analysis</h3>
+                    <p>Root cause identification</p>
+                </div>
+                <div class="process-step">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400" alt="Treatment">
+                    <h3>3. Treatment</h3>
+                    <p>Personalized care plan</p>
+                </div>
+                <div class="process-step">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400" alt="Results">
+                    <h3>4. Results</h3>
+                    <p>Lasting wellness</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>Patient Success Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200" alt="Patient 1">
+                    <p>"After years of chronic pain, Dr. Asakura gave me my life back!"</p>
+                    <p class="author">— Margaret T.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200" alt="Patient 2">
+                    <p>"My migraines are 90% gone. This approach really works."</p>
+                    <p class="author">— James R.</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200" alt="Patient 3">
+                    <p>"Recovery time cut in half. Incredible results!"</p>
+                    <p class="author">— Sarah K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="results">
+        <div class="container">
+            <h2>Transformation Stories</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400" alt="Before">
+                    <div class="result-content">
+                        <h3>Chronic Pain Relief</h3>
+                        <p>From daily pain to active lifestyle in 3 months</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400" alt="After">
+                    <div class="result-content">
+                        <h3>Athletic Performance</h3>
+                        <p>Enhanced recovery and peak performance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="consultation">
+        <div class="container">
+            <div class="logo-large"><img src="logo.jpg" alt="Asakura Beyond Chiropractic" style="max-width: 300px; margin-bottom: 30px;"></div>
+            <h2>Start Your Transformation</h2>
+            <p>Initial consultation only $49 (regular $200)</p>
+            <a href="#" class="btn-white">Schedule Now</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dr. Debra Asakura, DC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
